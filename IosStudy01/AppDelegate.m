@@ -7,7 +7,7 @@
 //
 
 #import "AppDelegate.h"
-#import "ViewController.h"
+#import "LoginViewController.h"
 
 @interface AppDelegate ()
 
@@ -20,7 +20,7 @@
     
     self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
     
-    ViewController* controller = [[ViewController alloc] init];
+    LoginViewController* controller = [[LoginViewController alloc] init];
     
     UINavigationController* navigation = [[UINavigationController alloc] initWithRootViewController:controller];
     
