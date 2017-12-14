@@ -7,7 +7,8 @@
 //
 
 #import "LoginViewController.h"
-#import "DataListViewController.h"
+#import "MyTabBarController.h"
+#import "UIImage+MISColor.h"
 #import <Masonry/Masonry.h>
 #define PADDING_LEFT 10
 
@@ -98,9 +99,6 @@
         make.width.equalTo(self.accountBgView);
         make.height.equalTo(@(44));
     }];
-    
-    [self.clickButton addTarget:self action:@selector(goMainPage) forControlEvents:UIControlEventTouchUpInside];
-
     
 //    [self.view addSubview:self.redLabel];
 //
@@ -260,11 +258,14 @@
  */
 -(UIButton *)clickButton {
     if (!_clickButton) {
-        _clickButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
+        _clickButton = [UIButton buttonWithType:UIButtonTypeCustom];
         _clickButton.layer.cornerRadius = 5;
+        _clickButton.clipsToBounds = YES;
         [_clickButton setTitle:@"登录" forState:UIControlStateNormal];
-        [_clickButton setBackgroundColor:[UIColor orangeColor]];
+        [_clickButton setBackgroundImage:[UIImage imageWithColor:[UIColor orangeColor]] forState:UIControlStateNormal];
         [_clickButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+        [_clickButton setTitleColor:[UIColor grayColor] forState:UIControlStateHighlighted];
+        [_clickButton addTarget:self action:@selector(goMainPage) forControlEvents:UIControlEventTouchUpInside];
     }
     return _clickButton;
 }
@@ -286,7 +287,7 @@
 
 -(void)goMainPage {
     
-    DataListViewController* controller = [[DataListViewController alloc] init];
+    MyTabBarController* controller = [[MyTabBarController alloc] init];
     [self.navigationController pushViewController:controller animated:YES];
 }
 
