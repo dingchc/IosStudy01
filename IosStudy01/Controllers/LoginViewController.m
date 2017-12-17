@@ -37,6 +37,8 @@
     self.view.backgroundColor = [UIColor whiteColor];
     UITapGestureRecognizer* tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tapMe:)];
     
+    self.navigationItem.title = @"登录";
+    
     [self.view addGestureRecognizer: tap];
     
     // 账号

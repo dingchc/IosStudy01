@@ -19,8 +19,6 @@
 
 @property(nonatomic, strong) NSMutableArray* contacts;
 
-
-
 @property(nonatomic, copy) NSDictionary* contactDictionary;
 
 @end
@@ -32,7 +30,6 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    self.title = @"DataList";
     self.view.backgroundColor = [UIColor whiteColor];
     
     [self.view addSubview:self.dataTableView];

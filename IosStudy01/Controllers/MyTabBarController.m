@@ -8,9 +8,10 @@
 
 #import "MyTabBarController.h"
 #import "DataListViewController.h"
+#import "TopicListViewController.h"
 #import "ViewController.h"
 
-@interface MyTabBarController ()
+@interface MyTabBarController () <UITabBarDelegate>
 
 @end
 
@@ -20,26 +21,43 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
+    self.title = @"消息";
+    
+    // 话题列表
+    TopicListViewController* topicViewController = [[TopicListViewController alloc] init];
+    topicViewController.tabBarItem = [[UITabBarItem alloc] initWithTitle:@"消息" image:[UIImage imageNamed:@"tab_message"]
+                                                           selectedImage:[UIImage imageNamed:@"tab_message"]];
+    topicViewController.tabBarItem.badgeValue = @"3";
+    
+    // 联系人
     DataListViewController* contactViewController = [[DataListViewController alloc] init];
     
     contactViewController.tabBarItem = [[UITabBarItem alloc] initWithTitle:@"联系人"
                                                                      image:[UIImage imageNamed:@"tab_message"]
                                                              selectedImage:[UIImage imageNamed:@"tab_message"]];
     
+    // 设置
     ViewController* configViewController = [[ViewController alloc] init];
     
     configViewController.tabBarItem = [[UITabBarItem alloc] initWithTitle:@"设置"
                                                                     image:[UIImage imageNamed:@"tab_message_hl_teacher"]
                                                             selectedImage:[UIImage imageNamed:@"tab_message_hl_teacher"]];
     
-    configViewController.tabBarItem.badgeValue = @"999";
     
-    self.viewControllers=@[contactViewController, configViewController];
+    
+    self.viewControllers=@[topicViewController, contactViewController, configViewController];
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+/**
+ * tabBar选择回调
+ */
+-(void)tabBar:(UITabBar *)tabBar didSelectItem:(UITabBarItem *)item {
+    self.title = item.title;
 }
 
 /*
