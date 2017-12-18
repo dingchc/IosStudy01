@@ -14,8 +14,10 @@
     self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
     
     if (self) {
-        self.titleLabel = [[UILabel alloc] initWithFrame:CGRectMake(30, 0, 50, 50)];
-        self.contentLabel = [[UILabel alloc] initWithFrame:CGRectMake(30, 60, 200, 50)];
+        self.titleLabel = [[UILabel alloc] initWithFrame:CGRectMake(30, 0, 50, 30)];
+        self.contentLabel = [[UILabel alloc] initWithFrame:CGRectMake(30, 40, 200, 30)];
+        [self.contentLabel setTextColor:[UIColor grayColor]];
+        [self.contentLabel setFont:[UIFont systemFontOfSize:16]];
         
         [self.contentView addSubview:self.titleLabel];
         [self.contentView addSubview:self.contentLabel];

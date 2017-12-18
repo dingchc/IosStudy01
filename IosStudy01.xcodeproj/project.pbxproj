@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		3537C65B1FE6AC4900F377B4 /* TopicListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3537C65A1FE6AC4900F377B4 /* TopicListViewController.m */; };
 		3537C65E1FE6B31200F377B4 /* TopicTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3537C65D1FE6B31200F377B4 /* TopicTableViewCell.m */; };
+		3537C6611FE7F25700F377B4 /* TopicEntry.m in Sources */ = {isa = PBXBuildFile; fileRef = 3537C6601FE7F25700F377B4 /* TopicEntry.m */; };
 		356C8BCB1F2CC0CB00F11435 /* Toolkit.m in Sources */ = {isa = PBXBuildFile; fileRef = 356C8BCA1F2CC0CB00F11435 /* Toolkit.m */; };
 		3590F2A11B819E0400C511AF /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 3590F2A01B819E0400C511AF /* main.m */; };
 		3590F2A41B819E0400C511AF /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 3590F2A31B819E0400C511AF /* AppDelegate.m */; };
@@ -48,6 +49,8 @@
 		3537C65A1FE6AC4900F377B4 /* TopicListViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TopicListViewController.m; sourceTree = "<group>"; };
 		3537C65C1FE6B31200F377B4 /* TopicTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TopicTableViewCell.h; sourceTree = "<group>"; };
 		3537C65D1FE6B31200F377B4 /* TopicTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TopicTableViewCell.m; sourceTree = "<group>"; };
+		3537C65F1FE7F25700F377B4 /* TopicEntry.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TopicEntry.h; sourceTree = "<group>"; };
+		3537C6601FE7F25700F377B4 /* TopicEntry.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TopicEntry.m; sourceTree = "<group>"; };
 		356C8BC91F2CC0CB00F11435 /* Toolkit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Toolkit.h; sourceTree = "<group>"; };
 		356C8BCA1F2CC0CB00F11435 /* Toolkit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Toolkit.m; sourceTree = "<group>"; };
 		3590F29B1B819E0400C511AF /* IosStudy01.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = IosStudy01.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -187,6 +190,8 @@
 				3537C65A1FE6AC4900F377B4 /* TopicListViewController.m */,
 				3537C65C1FE6B31200F377B4 /* TopicTableViewCell.h */,
 				3537C65D1FE6B31200F377B4 /* TopicTableViewCell.m */,
+				3537C65F1FE7F25700F377B4 /* TopicEntry.h */,
+				3537C6601FE7F25700F377B4 /* TopicEntry.m */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -333,6 +338,7 @@
 				3537C65B1FE6AC4900F377B4 /* TopicListViewController.m in Sources */,
 				35ACC5641FE24EF500470EAE /* MyTableViewCell.m in Sources */,
 				35ACC5631FE24EF500470EAE /* MyTabBarController.m in Sources */,
+				3537C6611FE7F25700F377B4 /* TopicEntry.m in Sources */,
 				35ACC5601FE24EF500470EAE /* ContactEntry.m in Sources */,
 				35ACC57D1FE2551500470EAE /* UIImage+MISColor.m in Sources */,
 			);
