@@ -32,6 +32,7 @@
 		35ACC5771FE24F1F00470EAE /* Masonry.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 35ACC5761FE24F1F00470EAE /* Masonry.framework */; };
 		35ACC5791FE24F6F00470EAE /* avatar_default_big.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 35ACC5781FE24F6E00470EAE /* avatar_default_big.jpg */; };
 		35ACC57D1FE2551500470EAE /* UIImage+MISColor.m in Sources */ = {isa = PBXBuildFile; fileRef = 35ACC57C1FE2551500470EAE /* UIImage+MISColor.m */; };
+		35B37D5A1FE8D6860031ADCA /* MISTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 35B37D591FE8D6860031ADCA /* MISTableViewCell.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -87,6 +88,9 @@
 		35ACC57A1FE2507700470EAE /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/LaunchScreen.strings"; sourceTree = "<group>"; };
 		35ACC57B1FE2551500470EAE /* UIImage+MISColor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+MISColor.h"; sourceTree = "<group>"; };
 		35ACC57C1FE2551500470EAE /* UIImage+MISColor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+MISColor.m"; sourceTree = "<group>"; };
+		35B37D581FE8D6860031ADCA /* MISTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MISTableViewCell.h; sourceTree = "<group>"; };
+		35B37D591FE8D6860031ADCA /* MISTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MISTableViewCell.m; sourceTree = "<group>"; };
+		35B37D5B1FE8DD2E0031ADCA /* MISAppConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MISAppConfig.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -172,6 +176,9 @@
 		35ACC5531FE24EF500470EAE /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				35B37D5B1FE8DD2E0031ADCA /* MISAppConfig.h */,
+				35B37D581FE8D6860031ADCA /* MISTableViewCell.h */,
+				35B37D591FE8D6860031ADCA /* MISTableViewCell.m */,
 				35ACC57B1FE2551500470EAE /* UIImage+MISColor.h */,
 				35ACC57C1FE2551500470EAE /* UIImage+MISColor.m */,
 				35ACC5541FE24EF500470EAE /* ContactEntry.h */,
@@ -341,6 +348,7 @@
 				3537C6611FE7F25700F377B4 /* TopicEntry.m in Sources */,
 				35ACC5601FE24EF500470EAE /* ContactEntry.m in Sources */,
 				35ACC57D1FE2551500470EAE /* UIImage+MISColor.m in Sources */,
+				35B37D5A1FE8D6860031ADCA /* MISTableViewCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

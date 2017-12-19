@@ -10,6 +10,8 @@
 #import "TopicTableViewCell.h"
 #import "TopicEntry.h"
 
+#define CELL_TAG @"my_tag"
+
 @interface TopicListViewController () <UITableViewDataSource, UITableViewDelegate>
 
 @property(nonatomic, strong) UITableView* topicTableView;
@@ -40,8 +42,8 @@
  */
 - (void) initData {
     TopicEntry* entry1 = [TopicEntry entryWithTitle:@"丁丁" withContent:@"今天去上班" withTime:@"11-22"];
-    TopicEntry* entry2 = [TopicEntry entryWithTitle:@"毛毛" withContent:@"今天去公园" withTime:@"12-22"];
-    TopicEntry* entry3 = [TopicEntry entryWithTitle:@"牛牛" withContent:@"今天去山东" withTime:@"10-22"];
+    TopicEntry* entry2 = [TopicEntry entryWithTitle:@"毛毛水电费水电费水电费水电费水电费第三方水水电费水电费水电费水电费水电费第三方水" withContent:@"今天去公园" withTime:@"2017-08-30 12-22"];
+    TopicEntry* entry3 = [TopicEntry entryWithTitle:@"牛牛" withContent:@"水电费水电费水电费水电费水电费第三方水电费水电费负担分为若翁热无热热无若" withTime:@"10-22"];
     self.topicArray = @[entry1, entry2, entry3];
 }
 
@@ -54,12 +56,11 @@
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     
-    TopicTableViewCell* cell = (TopicTableViewCell*) [self.topicTableView dequeueReusableCellWithIdentifier:@"cellTag"];
+    TopicTableViewCell* cell = (TopicTableViewCell*) [self.topicTableView dequeueReusableCellWithIdentifier:[TopicTableViewCell reuseIdentifier]];
     
     TopicEntry* entry = self.topicArray[indexPath.row];
-    
-    [cell.titleLabel setText:entry.title];
-    [cell.contentLabel setText:entry.content];
+
+    [cell updateCellWithObj:entry];
     
     return cell;
 }
@@ -68,16 +69,14 @@
     return 1;
 }
 
--(NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
-    return @"今天的消息";
-}
-
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
     return [self.topicArray count];
 }
 
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-    return 80;
+    
+    TopicEntry* entry = self.topicArray[indexPath.row];
+    return [TopicTableViewCell heightForCellWithObj:entry];
 }
 
 -(UITableView *)topicTableView {
@@ -86,8 +85,9 @@
     }
     _topicTableView.delegate = self;
     _topicTableView.dataSource = self;
+    _topicTableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     
-    [_topicTableView registerClass:[TopicTableViewCell class] forCellReuseIdentifier:@"cellTag"];
+    [_topicTableView registerClass:[TopicTableViewCell class] forCellReuseIdentifier:[TopicTableViewCell reuseIdentifier]];
     
     return _topicTableView;
 }
@@ -103,3 +103,5 @@
 */
 
 @end
+
+#undef CELL_TAG

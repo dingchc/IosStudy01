@@ -7,8 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "MISTableViewCell.h"
 
-@interface TopicTableViewCell : UITableViewCell
+@interface TopicTableViewCell : MISTableViewCell
 @property(nonatomic, strong) UILabel* titleLabel;
 @property(nonatomic, strong) UILabel* contentLabel;
+@property(nonatomic, strong) UILabel* timeLabel;
 @end
