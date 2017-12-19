@@ -10,7 +10,10 @@
 #import "MISTableViewCell.h"
 
 @interface TopicTableViewCell : MISTableViewCell
+
+@property(nonatomic, strong) UIImageView* avatarImageView;
 @property(nonatomic, strong) UILabel* titleLabel;
 @property(nonatomic, strong) UILabel* contentLabel;
 @property(nonatomic, strong) UILabel* timeLabel;
+
 @end

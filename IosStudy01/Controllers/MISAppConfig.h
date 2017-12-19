@@ -195,6 +195,6 @@ double begin = CFAbsoluteTimeGetCurrent();
 printf("Run Duration:[%f]\n", CFAbsoluteTimeGetCurrent() - begin); \
 printf("================Line:[%d]==================\n", __LINE__);
 
-
+#define MIS_PAGE_MARGIN 15.0f
 
 #endif

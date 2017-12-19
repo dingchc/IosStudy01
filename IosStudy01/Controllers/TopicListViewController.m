@@ -92,6 +92,46 @@
     return _topicTableView;
 }
 
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    
+    NSLog(@"%s -- %d -- %ld", __FUNCTION__, __LINE__, indexPath.row);
+}
+
+-(BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
+    return YES;
+}
+
+-(NSString *)tableView:(UITableView *)tableView titleForDeleteConfirmationButtonForRowAtIndexPath:(NSIndexPath *)indexPath {
+    return @"删除";
+}
+
+-(void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
+    
+    NSLog(@"%s", __FUNCTION__);
+    // 删除
+    if (editingStyle == UITableViewCellEditingStyleDelete) {
+        [self deleteARowAtIndexPath:indexPath];
+        [self.topicTableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:YES];
+    }
+}
+
+-(void)tableView:(UITableView *)tableView didEndEditingRowAtIndexPath:(NSIndexPath *)indexPath {
+    NSLog(@"%s", __FUNCTION__);
+}
+
+/**
+ * 删除一行
+ * @param indexPath 一行
+ */
+-(void)deleteARowAtIndexPath:(NSIndexPath *) indexPath {
+    
+    NSMutableArray* mutableArray = [[NSMutableArray alloc] initWithArray:self.topicArray];
+    
+    [mutableArray removeObjectAtIndex:indexPath.row];
+    
+    self.topicArray = [[NSArray alloc] initWithArray:mutableArray];
+}
+
 /*
 #pragma mark - Navigation
 
