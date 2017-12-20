@@ -15,6 +15,8 @@
     
     if (self) {
         
+        self.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+//        self.selectionStyle = UITableViewCellSelectionStyleNone;
         // 名称
         self.titleLabel = [[UILabel alloc] initWithFrame:CGRectMake(50, 0, 300, 50)];
         
@@ -27,6 +29,12 @@
     }
     
     return self;
+}
+
+-(void)prepareForReuse{
+    [super prepareForReuse];
+    
+    NSLog(@"%s", __FUNCTION__);
 }
 
 @end

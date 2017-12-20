@@ -86,7 +86,6 @@
     _topicTableView.delegate = self;
     _topicTableView.dataSource = self;
     _topicTableView.separatorStyle = UITableViewCellSeparatorStyleNone;
-    
     [_topicTableView registerClass:[TopicTableViewCell class] forCellReuseIdentifier:[TopicTableViewCell reuseIdentifier]];
     
     return _topicTableView;
@@ -125,7 +124,7 @@
  */
 -(void)deleteARowAtIndexPath:(NSIndexPath *) indexPath {
     
-    NSMutableArray* mutableArray = [[NSMutableArray alloc] initWithArray:self.topicArray];
+    NSMutableArray* mutableArray = [self.topicArray mutableCopy];
     
     [mutableArray removeObjectAtIndex:indexPath.row];
     

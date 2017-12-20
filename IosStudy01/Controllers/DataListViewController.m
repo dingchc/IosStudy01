@@ -57,8 +57,6 @@
     
     NSLog(@"%ld", indexPath.row);
     
-//    ContactEntry* entry = [self.contactArray objectAtIndex:[indexPath ]];
-    
     NSMutableArray* contactArray = [self.contactDictionary objectForKey : self.contacts[indexPath.section]];
     
     ContactEntry* entry = contactArray[indexPath.row];
@@ -69,7 +67,6 @@
     
     cell.titleLabel.text = [entry getPinyinName];
     cell.iconImageView.image = [UIImage imageNamed:@"avatar_default_big.jpg"];
-    
     
     return cell;
 }
@@ -95,6 +92,22 @@
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     NSLog(@"section=%ld row = %ld", indexPath.section,indexPath.row);
+    
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    
+    NSArray* documentPaths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+    
+    NSString* filePath = [documentPaths.firstObject stringByAppendingPathComponent:@"1.jpg"];
+    
+    NSLog(@"filePath=%@", filePath);
+    
+    NSData* data = [[NSData alloc] initWithContentsOfURL:[NSURL URLWithString:@"http://www.thebeijinger.com/files/u216958/Easter_Sunday_Brunch___Kranzler___s.jpg"]];
+    
+    [data writeToFile:filePath atomically:YES];
+    
+//    cell.iconImageView.image = [UIImage imageWithData:data];
+    
+    
 }
 
 -(NSArray *)sectionIndexTitlesForTableView:(UITableView *)tableView {
@@ -102,22 +115,22 @@
     return sectionTitles;
 }
 
-//- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
-//    return YES;
-//}
-//
-//- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
-//    
-//    if (editingStyle == UITableViewCellEditingStyleDelete) {
-//        
-//        NSMutableArray* sectionArray = [self.contactDictionary objectForKey:[self.contacts objectAtIndex:indexPath.section]];
-//        ContactEntry* deleteContact = [sectionArray objectAtIndex:indexPath.row];
-//        
-//        [sectionArray removeObject:deleteContact];
-//        
-//        [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationAutomatic];
-//    }
-//}
+- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
+    return YES;
+}
+
+- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
+    
+    if (editingStyle == UITableViewCellEditingStyleDelete) {
+        
+        NSMutableArray* sectionArray = [self.contactDictionary objectForKey:[self.contacts objectAtIndex:indexPath.section]];
+        ContactEntry* deleteContact = [sectionArray objectAtIndex:indexPath.row];
+        
+        [sectionArray removeObject:deleteContact];
+        
+        [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationAutomatic];
+    }
+}
 
 
 
@@ -126,7 +139,7 @@
 -(UITableView *)dataTableView {
     
     if (!_dataTableView) {
-        _dataTableView = [[UITableView alloc] initWithFrame:self.view.frame];
+        _dataTableView = [[UITableView alloc] initWithFrame:self.view.frame style:UITableViewStylePlain];
     }
     
     _dataTableView.delegate = self;
