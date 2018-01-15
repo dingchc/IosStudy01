@@ -77,7 +77,6 @@
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     
     NSString* key = [self.contacts objectAtIndex:section];
-    
     return [[self.contactDictionary objectForKey:key] count];
 }
 
@@ -86,6 +85,7 @@
 }
 
 -(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
+    
     return [self.contacts count];
 }
 

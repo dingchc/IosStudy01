@@ -7,9 +7,17 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		350B0144200646FB00F93EAF /* ConfigViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 350B0143200646FB00F93EAF /* ConfigViewController.m */; };
+		350B01472006490D00F93EAF /* ConfigTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 350B01462006490D00F93EAF /* ConfigTableViewCell.m */; };
+		350B014A20064BC500F93EAF /* ConfigEntry.m in Sources */ = {isa = PBXBuildFile; fileRef = 350B014920064BC500F93EAF /* ConfigEntry.m */; };
 		3537C65B1FE6AC4900F377B4 /* TopicListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3537C65A1FE6AC4900F377B4 /* TopicListViewController.m */; };
 		3537C65E1FE6B31200F377B4 /* TopicTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3537C65D1FE6B31200F377B4 /* TopicTableViewCell.m */; };
 		3537C6611FE7F25700F377B4 /* TopicEntry.m in Sources */ = {isa = PBXBuildFile; fileRef = 3537C6601FE7F25700F377B4 /* TopicEntry.m */; };
+		356B0FDE200CEA79009C54D3 /* my_favorite_bg.png in Resources */ = {isa = PBXBuildFile; fileRef = 356B0FD9200CEA79009C54D3 /* my_favorite_bg.png */; };
+		356B0FDF200CEA79009C54D3 /* my_page_btn_bg.png in Resources */ = {isa = PBXBuildFile; fileRef = 356B0FDA200CEA79009C54D3 /* my_page_btn_bg.png */; };
+		356B0FE0200CEA79009C54D3 /* my_setting_bg.png in Resources */ = {isa = PBXBuildFile; fileRef = 356B0FDB200CEA79009C54D3 /* my_setting_bg.png */; };
+		356B0FE1200CEA79009C54D3 /* my_credits_bg.png in Resources */ = {isa = PBXBuildFile; fileRef = 356B0FDC200CEA79009C54D3 /* my_credits_bg.png */; };
+		356B0FE2200CEA79009C54D3 /* school_forum_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 356B0FDD200CEA79009C54D3 /* school_forum_icon.png */; };
 		356C8BCB1F2CC0CB00F11435 /* Toolkit.m in Sources */ = {isa = PBXBuildFile; fileRef = 356C8BCA1F2CC0CB00F11435 /* Toolkit.m */; };
 		3590F2A11B819E0400C511AF /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 3590F2A01B819E0400C511AF /* main.m */; };
 		3590F2A41B819E0400C511AF /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 3590F2A31B819E0400C511AF /* AppDelegate.m */; };
@@ -46,12 +54,23 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		350B0142200646FB00F93EAF /* ConfigViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ConfigViewController.h; sourceTree = "<group>"; };
+		350B0143200646FB00F93EAF /* ConfigViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ConfigViewController.m; sourceTree = "<group>"; };
+		350B01452006490D00F93EAF /* ConfigTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ConfigTableViewCell.h; sourceTree = "<group>"; };
+		350B01462006490D00F93EAF /* ConfigTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ConfigTableViewCell.m; sourceTree = "<group>"; };
+		350B014820064BC500F93EAF /* ConfigEntry.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ConfigEntry.h; sourceTree = "<group>"; };
+		350B014920064BC500F93EAF /* ConfigEntry.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ConfigEntry.m; sourceTree = "<group>"; };
 		3537C6591FE6AC4900F377B4 /* TopicListViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TopicListViewController.h; sourceTree = "<group>"; };
 		3537C65A1FE6AC4900F377B4 /* TopicListViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TopicListViewController.m; sourceTree = "<group>"; };
 		3537C65C1FE6B31200F377B4 /* TopicTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TopicTableViewCell.h; sourceTree = "<group>"; };
 		3537C65D1FE6B31200F377B4 /* TopicTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TopicTableViewCell.m; sourceTree = "<group>"; };
 		3537C65F1FE7F25700F377B4 /* TopicEntry.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TopicEntry.h; sourceTree = "<group>"; };
 		3537C6601FE7F25700F377B4 /* TopicEntry.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TopicEntry.m; sourceTree = "<group>"; };
+		356B0FD9200CEA79009C54D3 /* my_favorite_bg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = my_favorite_bg.png; sourceTree = "<group>"; };
+		356B0FDA200CEA79009C54D3 /* my_page_btn_bg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = my_page_btn_bg.png; sourceTree = "<group>"; };
+		356B0FDB200CEA79009C54D3 /* my_setting_bg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = my_setting_bg.png; sourceTree = "<group>"; };
+		356B0FDC200CEA79009C54D3 /* my_credits_bg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = my_credits_bg.png; sourceTree = "<group>"; };
+		356B0FDD200CEA79009C54D3 /* school_forum_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = school_forum_icon.png; sourceTree = "<group>"; };
 		356C8BC91F2CC0CB00F11435 /* Toolkit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Toolkit.h; sourceTree = "<group>"; };
 		356C8BCA1F2CC0CB00F11435 /* Toolkit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Toolkit.m; sourceTree = "<group>"; };
 		3590F29B1B819E0400C511AF /* IosStudy01.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = IosStudy01.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -199,6 +218,12 @@
 				3537C65D1FE6B31200F377B4 /* TopicTableViewCell.m */,
 				3537C65F1FE7F25700F377B4 /* TopicEntry.h */,
 				3537C6601FE7F25700F377B4 /* TopicEntry.m */,
+				350B0142200646FB00F93EAF /* ConfigViewController.h */,
+				350B0143200646FB00F93EAF /* ConfigViewController.m */,
+				350B01452006490D00F93EAF /* ConfigTableViewCell.h */,
+				350B01462006490D00F93EAF /* ConfigTableViewCell.m */,
+				350B014820064BC500F93EAF /* ConfigEntry.h */,
+				350B014920064BC500F93EAF /* ConfigEntry.m */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -206,6 +231,11 @@
 		35ACC5661FE24F1000470EAE /* resource */ = {
 			isa = PBXGroup;
 			children = (
+				356B0FDC200CEA79009C54D3 /* my_credits_bg.png */,
+				356B0FD9200CEA79009C54D3 /* my_favorite_bg.png */,
+				356B0FDA200CEA79009C54D3 /* my_page_btn_bg.png */,
+				356B0FDB200CEA79009C54D3 /* my_setting_bg.png */,
+				356B0FDD200CEA79009C54D3 /* school_forum_icon.png */,
 				35ACC5781FE24F6E00470EAE /* avatar_default_big.jpg */,
 				35ACC5671FE24F1000470EAE /* tab_message@2x.png */,
 				35ACC5681FE24F1000470EAE /* tab_message@3x.png */,
@@ -310,12 +340,17 @@
 			files = (
 				3590F2AF1B819E0400C511AF /* LaunchScreen.xib in Resources */,
 				35ACC5791FE24F6F00470EAE /* avatar_default_big.jpg in Resources */,
+				356B0FDF200CEA79009C54D3 /* my_page_btn_bg.png in Resources */,
+				356B0FE2200CEA79009C54D3 /* school_forum_icon.png in Resources */,
 				35ACC5721FE24F1000470EAE /* title_btn_confirm_normal.png in Resources */,
 				35ACC56F1FE24F1000470EAE /* tab_message@3x.png in Resources */,
 				35ACC5731FE24F1000470EAE /* title_btn_confirm_pressed.png in Resources */,
 				3590F2AC1B819E0400C511AF /* Images.xcassets in Resources */,
 				35ACC5701FE24F1000470EAE /* tab_message_hl_teacher@2x.png in Resources */,
 				35ACC5711FE24F1000470EAE /* tab_message_hl_teacher@3x.png in Resources */,
+				356B0FE1200CEA79009C54D3 /* my_credits_bg.png in Resources */,
+				356B0FDE200CEA79009C54D3 /* my_favorite_bg.png in Resources */,
+				356B0FE0200CEA79009C54D3 /* my_setting_bg.png in Resources */,
 				35ACC56E1FE24F1000470EAE /* tab_message@2x.png in Resources */,
 				35ACC5741FE24F1000470EAE /* title_btn_confirm_pressed@3x.png in Resources */,
 			);
@@ -342,10 +377,13 @@
 				3590F2A11B819E0400C511AF /* main.m in Sources */,
 				3537C65E1FE6B31200F377B4 /* TopicTableViewCell.m in Sources */,
 				35ACC5611FE24EF500470EAE /* DataListViewController.m in Sources */,
+				350B0144200646FB00F93EAF /* ConfigViewController.m in Sources */,
 				3537C65B1FE6AC4900F377B4 /* TopicListViewController.m in Sources */,
+				350B01472006490D00F93EAF /* ConfigTableViewCell.m in Sources */,
 				35ACC5641FE24EF500470EAE /* MyTableViewCell.m in Sources */,
 				35ACC5631FE24EF500470EAE /* MyTabBarController.m in Sources */,
 				3537C6611FE7F25700F377B4 /* TopicEntry.m in Sources */,
+				350B014A20064BC500F93EAF /* ConfigEntry.m in Sources */,
 				35ACC5601FE24EF500470EAE /* ContactEntry.m in Sources */,
 				35ACC57D1FE2551500470EAE /* UIImage+MISColor.m in Sources */,
 				35B37D5A1FE8D6860031ADCA /* MISTableViewCell.m in Sources */,

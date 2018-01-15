@@ -10,6 +10,7 @@
 #import "DataListViewController.h"
 #import "TopicListViewController.h"
 #import "ViewController.h"
+#import "ConfigViewController.h"
 
 @interface MyTabBarController () <UITabBarDelegate>
 
@@ -37,7 +38,7 @@
                                                              selectedImage:[UIImage imageNamed:@"tab_message"]];
     
     // 设置
-    ViewController* configViewController = [[ViewController alloc] init];
+    ConfigViewController* configViewController = [[ConfigViewController alloc] init];
     
     configViewController.tabBarItem = [[UITabBarItem alloc] initWithTitle:@"设置"
                                                                     image:[UIImage imageNamed:@"tab_message_hl_teacher"]
