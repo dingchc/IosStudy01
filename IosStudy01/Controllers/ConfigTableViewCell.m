@@ -13,10 +13,11 @@
 -(instancetype)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier {
     
     self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
-    
+    self.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+
     if (self) {
-        self.iconImageView = [[UIImageView alloc]  initWithFrame:CGRectMake(8, 8, 32, 32)];
-        self.titleLabel = [[UILabel alloc]  initWithFrame:CGRectMake(50, 8, 80, 32)];
+        self.iconImageView = [[UIImageView alloc]  initWithFrame:CGRectMake(16, 8, 32, 32)];
+        self.titleLabel = [[UILabel alloc]  initWithFrame:CGRectMake(56, 8, 80, 32)];
         
         [self addSubview:self.iconImageView];
         [self addSubview:self.titleLabel];
