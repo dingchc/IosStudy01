@@ -11,6 +11,7 @@
 @interface ConfigEntry : NSObject
 @property(nonatomic, strong) NSString* title;
 @property(nonatomic, strong) NSString* iconName;
+@property(nonatomic, assign) NSInteger itemMode;
 
-+(ConfigEntry*) entryWithTitle:(NSString*) title withIcon:(NSString*) icon;
++(ConfigEntry*) entryWithTitle:(NSString*) title withIcon:(NSString*) icon withMode:(NSInteger) mode;
 @end

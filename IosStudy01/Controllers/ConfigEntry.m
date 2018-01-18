@@ -10,11 +10,12 @@
 
 @implementation ConfigEntry
 
-+(ConfigEntry*) entryWithTitle:(NSString*) title withIcon:(NSString*) icon {
++(ConfigEntry*) entryWithTitle:(NSString*) title withIcon:(NSString*) icon withMode:(NSInteger) mode {
     
     ConfigEntry* entry = [[ConfigEntry alloc] init];
     entry.title = title;
     entry.iconName = icon;
+    entry.itemMode = mode;
     return entry;
 }
 

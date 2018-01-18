@@ -7,6 +7,7 @@
 //
 
 #import "ConfigTableViewCell.h"
+#import <Masonry/Masonry.h>
 
 @implementation ConfigTableViewCell
 
@@ -16,13 +17,37 @@
     self.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
 
     if (self) {
-        self.iconImageView = [[UIImageView alloc]  initWithFrame:CGRectMake(16, 8, 32, 32)];
-        self.titleLabel = [[UILabel alloc]  initWithFrame:CGRectMake(56, 8, 80, 32)];
+        self.iconImageView = [[UIImageView alloc]  init];
+        self.titleLabel = [[UILabel alloc]  init];
         
-        [self addSubview:self.iconImageView];
-        [self addSubview:self.titleLabel];
+        [self.contentView addSubview:self.iconImageView];
+        [self.contentView addSubview:self.titleLabel];
+        
+        [self.iconImageView mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.left.equalTo(@16);
+            make.width.equalTo(@40);
+            make.height.equalTo(@40);
+            make.centerY.equalTo(self.contentView);
+        }];
+        
+        [self.titleLabel mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.left.equalTo(self.iconImageView.mas_right).offset(10);
+            make.right.equalTo(@16);
+            make.height.equalTo(@32);
+            make.centerY.equalTo(self.contentView);
+        }];
     }
     return self;
+}
+
+-(void)remake {
+    
+    [self.iconImageView mas_remakeConstraints:^(MASConstraintMaker *make) {
+        make.left.equalTo(@16);
+        make.width.equalTo(@60);
+        make.height.equalTo(@60);
+        make.centerY.equalTo(self.contentView);
+    }];
 }
 
 - (void)awakeFromNib {

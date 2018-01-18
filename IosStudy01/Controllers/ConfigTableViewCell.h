@@ -11,4 +11,6 @@
 @interface ConfigTableViewCell : UITableViewCell
 @property(nonatomic, strong) UIImageView* iconImageView;
 @property(nonatomic, strong) UILabel* titleLabel;
+
+-(void)remake;
 @end
