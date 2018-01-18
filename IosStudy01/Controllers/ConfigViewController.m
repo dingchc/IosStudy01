@@ -46,7 +46,7 @@
 -(void) initData {
     
     // avatar
-    ConfigEntry* avatarEntry = [ConfigEntry entryWithTitle:@"我的信息" withIcon:@"my_page_btn_bg" withMode : 2];
+    ConfigEntry* avatarEntry = [ConfigEntry entryWithTitle:@"我的信息" withIcon:@"avatar_default_big.jpg" withMode : 2];
     NSArray<ConfigEntry*>* avatarArray = [[NSArray alloc] initWithObjects:avatarEntry, nil];
     [self.itemDictionary  setValue:avatarArray forKey:self.itemArray[0]];
     
