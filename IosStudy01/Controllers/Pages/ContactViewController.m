@@ -6,8 +6,8 @@
 //  Copyright © 2017 ding. All rights reserved.
 //
 
-#import "DataListViewController.h"
-#import "MyTableViewCell.h"
+#import "ContactViewController.h"
+#import "ContactTableViewCell.h"
 #import "ContactEntry.h"
 #import "Toolkit.h"
 

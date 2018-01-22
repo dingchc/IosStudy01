@@ -25,10 +25,10 @@
 		3590F2AF1B819E0400C511AF /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3590F2AD1B819E0400C511AF /* LaunchScreen.xib */; };
 		3590F2BB1B819E0400C511AF /* IosStudy01Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = 3590F2BA1B819E0400C511AF /* IosStudy01Tests.m */; };
 		35ACC5601FE24EF500470EAE /* ContactEntry.m in Sources */ = {isa = PBXBuildFile; fileRef = 35ACC5551FE24EF500470EAE /* ContactEntry.m */; };
-		35ACC5611FE24EF500470EAE /* DataListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 35ACC5571FE24EF500470EAE /* DataListViewController.m */; };
+		35ACC5611FE24EF500470EAE /* ContactViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 35ACC5571FE24EF500470EAE /* ContactViewController.m */; };
 		35ACC5621FE24EF500470EAE /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 35ACC5591FE24EF500470EAE /* LoginViewController.m */; };
 		35ACC5631FE24EF500470EAE /* MyTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 35ACC55B1FE24EF500470EAE /* MyTabBarController.m */; };
-		35ACC5641FE24EF500470EAE /* MyTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 35ACC55D1FE24EF500470EAE /* MyTableViewCell.m */; };
+		35ACC5641FE24EF500470EAE /* ContactTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 35ACC55D1FE24EF500470EAE /* ContactTableViewCell.m */; };
 		35ACC56E1FE24F1000470EAE /* tab_message@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 35ACC5671FE24F1000470EAE /* tab_message@2x.png */; };
 		35ACC56F1FE24F1000470EAE /* tab_message@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 35ACC5681FE24F1000470EAE /* tab_message@3x.png */; };
 		35ACC5701FE24F1000470EAE /* tab_message_hl_teacher@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 35ACC5691FE24F1000470EAE /* tab_message_hl_teacher@2x.png */; };
@@ -84,14 +84,14 @@
 		3590F2BA1B819E0400C511AF /* IosStudy01Tests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = IosStudy01Tests.m; sourceTree = "<group>"; };
 		35ACC5541FE24EF500470EAE /* ContactEntry.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ContactEntry.h; sourceTree = "<group>"; };
 		35ACC5551FE24EF500470EAE /* ContactEntry.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ContactEntry.m; sourceTree = "<group>"; };
-		35ACC5561FE24EF500470EAE /* DataListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataListViewController.h; sourceTree = "<group>"; };
-		35ACC5571FE24EF500470EAE /* DataListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataListViewController.m; sourceTree = "<group>"; };
+		35ACC5561FE24EF500470EAE /* ContactViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ContactViewController.h; sourceTree = "<group>"; };
+		35ACC5571FE24EF500470EAE /* ContactViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ContactViewController.m; sourceTree = "<group>"; };
 		35ACC5581FE24EF500470EAE /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
 		35ACC5591FE24EF500470EAE /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
 		35ACC55A1FE24EF500470EAE /* MyTabBarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyTabBarController.h; sourceTree = "<group>"; };
 		35ACC55B1FE24EF500470EAE /* MyTabBarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyTabBarController.m; sourceTree = "<group>"; };
-		35ACC55C1FE24EF500470EAE /* MyTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyTableViewCell.h; sourceTree = "<group>"; };
-		35ACC55D1FE24EF500470EAE /* MyTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyTableViewCell.m; sourceTree = "<group>"; };
+		35ACC55C1FE24EF500470EAE /* ContactTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ContactTableViewCell.h; sourceTree = "<group>"; };
+		35ACC55D1FE24EF500470EAE /* ContactTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ContactTableViewCell.m; sourceTree = "<group>"; };
 		35ACC5671FE24F1000470EAE /* tab_message@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tab_message@2x.png"; sourceTree = "<group>"; };
 		35ACC5681FE24F1000470EAE /* tab_message@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tab_message@3x.png"; sourceTree = "<group>"; };
 		35ACC5691FE24F1000470EAE /* tab_message_hl_teacher@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tab_message_hl_teacher@2x.png"; sourceTree = "<group>"; };
@@ -135,8 +135,8 @@
 				350B01462006490D00F93EAF /* ConfigTableViewCell.m */,
 				3537C65C1FE6B31200F377B4 /* TopicTableViewCell.h */,
 				3537C65D1FE6B31200F377B4 /* TopicTableViewCell.m */,
-				35ACC55C1FE24EF500470EAE /* MyTableViewCell.h */,
-				35ACC55D1FE24EF500470EAE /* MyTableViewCell.m */,
+				35ACC55C1FE24EF500470EAE /* ContactTableViewCell.h */,
+				35ACC55D1FE24EF500470EAE /* ContactTableViewCell.m */,
 				35B37D581FE8D6860031ADCA /* MISTableViewCell.h */,
 				35B37D591FE8D6860031ADCA /* MISTableViewCell.m */,
 			);
@@ -168,8 +168,8 @@
 		356B0FE620162420009C54D3 /* Pages */ = {
 			isa = PBXGroup;
 			children = (
-				35ACC5561FE24EF500470EAE /* DataListViewController.h */,
-				35ACC5571FE24EF500470EAE /* DataListViewController.m */,
+				35ACC5561FE24EF500470EAE /* ContactViewController.h */,
+				35ACC5571FE24EF500470EAE /* ContactViewController.m */,
 				35ACC5581FE24EF500470EAE /* LoginViewController.h */,
 				35ACC5591FE24EF500470EAE /* LoginViewController.m */,
 				35ACC55A1FE24EF500470EAE /* MyTabBarController.h */,
@@ -402,11 +402,11 @@
 				35ACC5621FE24EF500470EAE /* LoginViewController.m in Sources */,
 				3590F2A11B819E0400C511AF /* main.m in Sources */,
 				3537C65E1FE6B31200F377B4 /* TopicTableViewCell.m in Sources */,
-				35ACC5611FE24EF500470EAE /* DataListViewController.m in Sources */,
+				35ACC5611FE24EF500470EAE /* ContactViewController.m in Sources */,
 				350B0144200646FB00F93EAF /* ConfigViewController.m in Sources */,
 				3537C65B1FE6AC4900F377B4 /* TopicListViewController.m in Sources */,
 				350B01472006490D00F93EAF /* ConfigTableViewCell.m in Sources */,
-				35ACC5641FE24EF500470EAE /* MyTableViewCell.m in Sources */,
+				35ACC5641FE24EF500470EAE /* ContactTableViewCell.m in Sources */,
 				35ACC5631FE24EF500470EAE /* MyTabBarController.m in Sources */,
 				3537C6611FE7F25700F377B4 /* TopicEntry.m in Sources */,
 				350B014A20064BC500F93EAF /* ConfigEntry.m in Sources */,

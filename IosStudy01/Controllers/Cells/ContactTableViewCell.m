@@ -6,7 +6,7 @@
 //  Copyright © 2017 ding. All rights reserved.
 //
 
-#import "MyTableViewCell.h"
+#import "ContactTableViewCell.h"
 
 @implementation MyTableViewCell
 
