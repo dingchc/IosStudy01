@@ -246,10 +246,10 @@
 		35ACC5531FE24EF500470EAE /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				356B0FE320162350009C54D3 /* Cells */,
+				356B0FE4201623BE009C54D3 /* Entries */,
 				356B0FE620162420009C54D3 /* Pages */,
 				356B0FE5201623EC009C54D3 /* Utils */,
-				356B0FE4201623BE009C54D3 /* Entries */,
-				356B0FE320162350009C54D3 /* Cells */,
 				35B37D5B1FE8DD2E0031ADCA /* MISAppConfig.h */,
 			);
 			path = Controllers;
