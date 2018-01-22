@@ -9,7 +9,6 @@
 #import "MyTabBarController.h"
 #import "DataListViewController.h"
 #import "TopicListViewController.h"
-#import "ViewController.h"
 #import "ConfigViewController.h"
 
 @interface MyTabBarController () <UITabBarDelegate>
