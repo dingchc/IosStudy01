@@ -9,6 +9,7 @@
 #import "TopicListViewController.h"
 #import "TopicTableViewCell.h"
 #import "TopicEntry.h"
+#import "MessageViewController.h"
 
 #define CELL_TAG @"my_tag"
 
@@ -94,6 +95,9 @@
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     
     NSLog(@"%s -- %d -- %ld", __FUNCTION__, __LINE__, indexPath.row);
+    
+    MessageViewController* controller = [[MessageViewController alloc] init];
+    [self.navigationController pushViewController:controller animated:true];
 }
 
 -(BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
