@@ -39,7 +39,7 @@
 -(void)initData {
     
     for (int i = 0; i < 10; i++) {
-        MessageEntry* entry = [MessageEntry initWithMsgId:i withSenderId:1001 withSenderName:@"丁崇慈" withContent:@"今天天气还行，出来玩吧，一起去抓鸟，好吗？" withAvatar:@"https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1521651142271&di=52494c02723ef5ba139a5c9706386f28&imgtype=0&src=http%3A%2F%2Fpic36.nipic.com%2F20131207%2F4499633_225201000340_2.jpg"];
+        MessageEntry* entry = [MessageEntry initWithMsgId:i withSenderId:1001 withSenderName:@"丁崇慈" withContent:@"今天天气还行，出来玩吧，一起去抓鸟，好吗？加油，快点出来!" withAvatar:@"https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1521652236226&di=49fe9ae20e31319b618e2e7364d9e96c&imgtype=0&src=http%3A%2F%2Fpic.58pic.com%2F58pic%2F14%2F15%2F01%2F07958PICJg8_1024.jpg"];
         [self.messageArray addObject:entry];
     }
 }
