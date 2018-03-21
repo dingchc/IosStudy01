@@ -12,57 +12,29 @@
 
 @implementation MessageTableViewCell
 
--(void)prepare {
+-(instancetype)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier {
+    self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
     
-    [self.contentView addSubview:self.avatarImageView];
-    [self.contentView addSubview:self.senderNameLabel];
-    [self.contentView addSubview:self.contentLabel];
-    [self.contentView addSubview:self.previewImageView];
-    [self.contentView addSubview:self.audioImageView];
-}
-
--(void)placeSubViews {
+    if (self) {
+        
+//        self.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+        self.selectionStyle = UITableViewCellSelectionStyleNone;
+        
+        [self.contentView addSubview:self.avatarImageView];
+        [self.contentView addSubview:self.senderNameLabel];
+        [self.contentView addSubview:self.contentLabel];
+//        [self.contentView addSubview:self.previewImageView];
+//        [self.contentView addSubview:self.audioImageView];
+    }
     
-    // 头像
-    [self.avatarImageView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.equalTo(self.contentView).offset(10);
-        make.top.equalTo(self.contentView).offset(10);
-        make.width.equalTo(@40);
-        make.height.equalTo(@40);
-    }];
-    
-    // 内容
-    [self.contentLabel mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.equalTo(self.avatarImageView).offset(10);
-        make.top.equalTo(self.avatarImageView).offset(10);
-        make.width.equalTo(@80);
-        make.height.equalTo(@80);
-    }];
-}
-
--(void)updateCellWithObj:(id)obj {
-    
-    MessageEntry* entry = (MessageEntry*) obj;
-    self.senderNameLabel.text = entry.senderName;
-    self.contentLabel.text = entry.content;
-}
-
-- (void)awakeFromNib {
-    [super awakeFromNib];
-    // Initialization code
-}
-
-- (void)setSelected:(BOOL)selected animated:(BOOL)animated {
-    [super setSelected:selected animated:animated];
-
-    // Configure the view for the selected state
+    return self;
 }
 
 # pragma Getter & Setter
 
 - (UIImageView *)avatarImageView {
     if (!_avatarImageView) {
-        _avatarImageView = [[UIImageView alloc]init];
+        _avatarImageView = [[UIImageView alloc]initWithFrame:CGRectMake(10, 20, 36, 36)];
     }
     
     _avatarImageView.image = [UIImage imageNamed:@"Avatar_default_small"];
@@ -71,14 +43,19 @@
 
 -(UILabel *)senderNameLabel {
     if (!_senderNameLabel) {
-        _senderNameLabel = [[UILabel alloc]init];
+        _senderNameLabel = [[UILabel alloc]initWithFrame:CGRectMake(50, 10, 80, 30)];
+        _senderNameLabel.textColor = UIColor.grayColor;
+        _senderNameLabel.font = [UIFont systemFontOfSize : 12];
     }
     return _senderNameLabel;
 }
 
 -(UILabel *)contentLabel {
     if (!_contentLabel) {
-        _contentLabel = [[UILabel alloc]init];
+        _contentLabel = [[UILabel alloc]initWithFrame:CGRectMake(50, 36, self.frame.size.width, 40)];
+        _contentLabel.textColor = UIColor.blackColor;
+        _contentLabel.font = [UIFont systemFontOfSize : 14];
+        _contentLabel.numberOfLines = 2;
     }
     return _contentLabel;
 }

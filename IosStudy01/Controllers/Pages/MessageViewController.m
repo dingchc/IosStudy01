@@ -39,7 +39,7 @@
 -(void)initData {
     
     for (int i = 0; i < 10; i++) {
-        MessageEntry* entry = [MessageEntry initWithMsgId:i withSenderId:1001 withSenderName:@"丁崇慈"];
+        MessageEntry* entry = [MessageEntry initWithMsgId:i withSenderId:1001 withSenderName:@"丁崇慈" withContent:@"今天天气还行，出来玩吧，一起去抓鸟，好吗？" withAvatar:@"https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1521651142271&di=52494c02723ef5ba139a5c9706386f28&imgtype=0&src=http%3A%2F%2Fpic36.nipic.com%2F20131207%2F4499633_225201000340_2.jpg"];
         [self.messageArray addObject:entry];
     }
 }
@@ -50,13 +50,26 @@
 }
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    
     MessageTableViewCell* cell = [self.messageTableView dequeueReusableCellWithIdentifier:TAG_INPUT];
-    [cell updateCellWithObj:self.messageArray[indexPath.row]];
+    MessageEntry* entry = self.messageArray[indexPath.row];
+    
+    NSData* data = [[NSData alloc] initWithContentsOfURL:[NSURL URLWithString:entry.avatarUrl]];
+    cell.avatarImageView.image = [UIImage imageWithData:data];
+    
+    cell.senderNameLabel.text = entry.senderName;
+    cell.contentLabel.text = entry.content;
+    
     return cell;
 }
 
 - (NSInteger)tableView:(nonnull UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     return self.messageArray.count;
+}
+
+-(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+    
+    return 80;
 }
 
 

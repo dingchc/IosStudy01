@@ -10,11 +10,14 @@
 
 @implementation MessageEntry
 
-+(MessageEntry*) initWithMsgId:(NSInteger) msgId withSenderId:(NSInteger) senderId withSenderName:(NSString*) senderName {
++(MessageEntry*) initWithMsgId:(NSInteger) msgId withSenderId:(NSInteger) senderId withSenderName:(NSString*) senderName withContent:(NSString*) content withAvatar:(NSString*) avatarUrl {
     
     MessageEntry* entry = [[MessageEntry alloc] init];
     entry.msgId = msgId;
+    entry.senderName = senderName;
     entry.senderId = senderId;
+    entry.content = content;
+    entry.avatarUrl = avatarUrl;
     
     return entry;
 }

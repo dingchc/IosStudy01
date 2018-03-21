@@ -28,5 +28,5 @@
 @property(nonatomic, copy) NSString* thumbUrl;
 @property(nonatomic, copy) NSString* url;
 
-+(MessageEntry*) initWithMsgId:(NSInteger) msgId withSenderId:(NSInteger) senderId withSenderName:(NSString*) senderName;
++(MessageEntry*) initWithMsgId:(NSInteger) msgId withSenderId:(NSInteger) senderId withSenderName:(NSString*) senderName withContent:(NSString*) content withAvatar:(NSString*) avatarUrl;
 @end
