@@ -69,7 +69,7 @@
 
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
     
-    return 80;
+    return 100;
 }
 
 
@@ -80,6 +80,7 @@
         _messageTableView = [[UITableView alloc] initWithFrame:self.view.frame style:UITableViewStylePlain];
         _messageTableView.dataSource = self;
         _messageTableView.delegate = self;
+        _messageTableView.separatorStyle = UITableViewCellEditingStyleNone;
     }
     
     [_messageTableView registerClass:[MessageTableViewCell class] forCellReuseIdentifier:TAG_INPUT];
