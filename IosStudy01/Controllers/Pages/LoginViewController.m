@@ -9,6 +9,7 @@
 #import "LoginViewController.h"
 #import "MyTabBarController.h"
 #import "UIImage+MISColor.h"
+#import "ThreadController.h"
 #import <Masonry/Masonry.h>
 #define PADDING_LEFT 10
 
@@ -267,7 +268,7 @@
         [_clickButton setBackgroundImage:[UIImage imageWithColor:[UIColor orangeColor]] forState:UIControlStateNormal];
         [_clickButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
         [_clickButton setTitleColor:[UIColor grayColor] forState:UIControlStateHighlighted];
-        [_clickButton addTarget:self action:@selector(goMainPage) forControlEvents:UIControlEventTouchUpInside];
+        [_clickButton addTarget:self action:@selector(goNextPage) forControlEvents:UIControlEventTouchUpInside];
     }
     return _clickButton;
 }
@@ -290,6 +291,11 @@
 -(void)goMainPage {
     
     MyTabBarController* controller = [[MyTabBarController alloc] init];
+    [self.navigationController pushViewController:controller animated:YES];
+}
+
+-(void)goNextPage {
+    ThreadController* controller = [[ThreadController alloc] init];
     [self.navigationController pushViewController:controller animated:YES];
 }
 

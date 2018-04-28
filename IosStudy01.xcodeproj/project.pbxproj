@@ -56,6 +56,7 @@
 		35ACC5791FE24F6F00470EAE /* avatar_default_big.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 35ACC5781FE24F6E00470EAE /* avatar_default_big.jpg */; };
 		35ACC57D1FE2551500470EAE /* UIImage+MISColor.m in Sources */ = {isa = PBXBuildFile; fileRef = 35ACC57C1FE2551500470EAE /* UIImage+MISColor.m */; };
 		35B37D5A1FE8D6860031ADCA /* MISTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 35B37D591FE8D6860031ADCA /* MISTableViewCell.m */; };
+		35BB7F592093FFAD00C1070F /* ThreadController.m in Sources */ = {isa = PBXBuildFile; fileRef = 35BB7F582093FFAD00C1070F /* ThreadController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -142,6 +143,8 @@
 		35B37D581FE8D6860031ADCA /* MISTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MISTableViewCell.h; sourceTree = "<group>"; };
 		35B37D591FE8D6860031ADCA /* MISTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MISTableViewCell.m; sourceTree = "<group>"; };
 		35B37D5B1FE8DD2E0031ADCA /* MISAppConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MISAppConfig.h; sourceTree = "<group>"; };
+		35BB7F572093FFAD00C1070F /* ThreadController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ThreadController.h; sourceTree = "<group>"; };
+		35BB7F582093FFAD00C1070F /* ThreadController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ThreadController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -207,6 +210,8 @@
 		356B0FE620162420009C54D3 /* Pages */ = {
 			isa = PBXGroup;
 			children = (
+				35BB7F572093FFAD00C1070F /* ThreadController.h */,
+				35BB7F582093FFAD00C1070F /* ThreadController.m */,
 				35ACC5561FE24EF500470EAE /* ContactViewController.h */,
 				35ACC5571FE24EF500470EAE /* ContactViewController.m */,
 				35ACC5581FE24EF500470EAE /* LoginViewController.h */,
@@ -473,6 +478,7 @@
 				350B0144200646FB00F93EAF /* ConfigViewController.m in Sources */,
 				3537C65B1FE6AC4900F377B4 /* TopicListViewController.m in Sources */,
 				350B01472006490D00F93EAF /* ConfigTableViewCell.m in Sources */,
+				35BB7F592093FFAD00C1070F /* ThreadController.m in Sources */,
 				35ACC5641FE24EF500470EAE /* ContactTableViewCell.m in Sources */,
 				356B1009201A1689009C54D3 /* MessageViewController.m in Sources */,
 				35ACC5631FE24EF500470EAE /* MyTabBarController.m in Sources */,

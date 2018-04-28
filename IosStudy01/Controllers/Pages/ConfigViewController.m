@@ -156,6 +156,10 @@ typedef NS_ENUM(NSUInteger, Mode){
     return self.itemArray.count;
 }
 
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    
+    NSLog(@"section=%ld", indexPath.section);
+}
 
 
 @end
