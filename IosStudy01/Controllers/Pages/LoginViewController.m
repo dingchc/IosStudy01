@@ -10,6 +10,7 @@
 #import "MyTabBarController.h"
 #import "UIImage+MISColor.h"
 #import "ThreadController.h"
+#import "DrawerViewController.h"
 #import <Masonry/Masonry.h>
 #define PADDING_LEFT 10
 
@@ -295,7 +296,8 @@
 }
 
 -(void)goNextPage {
-    ThreadController* controller = [[ThreadController alloc] init];
+//    ThreadController* controller = [[ThreadController alloc] init];
+    DrawerViewController *controller = [[DrawerViewController alloc] init];
     [self.navigationController pushViewController:controller animated:YES];
 }
 

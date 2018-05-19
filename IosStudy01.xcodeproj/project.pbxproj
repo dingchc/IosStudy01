@@ -56,6 +56,8 @@
 		35ACC5791FE24F6F00470EAE /* avatar_default_big.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 35ACC5781FE24F6E00470EAE /* avatar_default_big.jpg */; };
 		35ACC57D1FE2551500470EAE /* UIImage+MISColor.m in Sources */ = {isa = PBXBuildFile; fileRef = 35ACC57C1FE2551500470EAE /* UIImage+MISColor.m */; };
 		35B37D5A1FE8D6860031ADCA /* MISTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 35B37D591FE8D6860031ADCA /* MISTableViewCell.m */; };
+		35B940F420B01D3C00A9A81F /* CustomView.m in Sources */ = {isa = PBXBuildFile; fileRef = 35B940F320B01D3C00A9A81F /* CustomView.m */; };
+		35B940F720B01D6200A9A81F /* DrawerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 35B940F520B01D6200A9A81F /* DrawerViewController.m */; };
 		35BB7F592093FFAD00C1070F /* ThreadController.m in Sources */ = {isa = PBXBuildFile; fileRef = 35BB7F582093FFAD00C1070F /* ThreadController.m */; };
 /* End PBXBuildFile section */
 
@@ -143,6 +145,10 @@
 		35B37D581FE8D6860031ADCA /* MISTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MISTableViewCell.h; sourceTree = "<group>"; };
 		35B37D591FE8D6860031ADCA /* MISTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MISTableViewCell.m; sourceTree = "<group>"; };
 		35B37D5B1FE8DD2E0031ADCA /* MISAppConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MISAppConfig.h; sourceTree = "<group>"; };
+		35B940F220B01D3C00A9A81F /* CustomView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomView.h; sourceTree = "<group>"; };
+		35B940F320B01D3C00A9A81F /* CustomView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomView.m; sourceTree = "<group>"; };
+		35B940F520B01D6200A9A81F /* DrawerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DrawerViewController.m; sourceTree = "<group>"; };
+		35B940F620B01D6200A9A81F /* DrawerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DrawerViewController.h; sourceTree = "<group>"; };
 		35BB7F572093FFAD00C1070F /* ThreadController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ThreadController.h; sourceTree = "<group>"; };
 		35BB7F582093FFAD00C1070F /* ThreadController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ThreadController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -210,6 +216,8 @@
 		356B0FE620162420009C54D3 /* Pages */ = {
 			isa = PBXGroup;
 			children = (
+				35B940F620B01D6200A9A81F /* DrawerViewController.h */,
+				35B940F520B01D6200A9A81F /* DrawerViewController.m */,
 				35BB7F572093FFAD00C1070F /* ThreadController.h */,
 				35BB7F582093FFAD00C1070F /* ThreadController.m */,
 				35ACC5561FE24EF500470EAE /* ContactViewController.h */,
@@ -292,6 +300,7 @@
 		35ACC5531FE24EF500470EAE /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				35B940F120B01CF900A9A81F /* Views */,
 				356B0FE320162350009C54D3 /* Cells */,
 				356B0FE4201623BE009C54D3 /* Entries */,
 				356B0FE620162420009C54D3 /* Pages */,
@@ -340,6 +349,15 @@
 				35ACC5761FE24F1F00470EAE /* Masonry.framework */,
 			);
 			path = Frameworks;
+			sourceTree = "<group>";
+		};
+		35B940F120B01CF900A9A81F /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				35B940F220B01D3C00A9A81F /* CustomView.h */,
+				35B940F320B01D3C00A9A81F /* CustomView.m */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -480,9 +498,11 @@
 				350B01472006490D00F93EAF /* ConfigTableViewCell.m in Sources */,
 				35BB7F592093FFAD00C1070F /* ThreadController.m in Sources */,
 				35ACC5641FE24EF500470EAE /* ContactTableViewCell.m in Sources */,
+				35B940F420B01D3C00A9A81F /* CustomView.m in Sources */,
 				356B1009201A1689009C54D3 /* MessageViewController.m in Sources */,
 				35ACC5631FE24EF500470EAE /* MyTabBarController.m in Sources */,
 				356B0FEC201A0E52009C54D3 /* MessageTableViewCell.m in Sources */,
+				35B940F720B01D6200A9A81F /* DrawerViewController.m in Sources */,
 				3537C6611FE7F25700F377B4 /* TopicEntry.m in Sources */,
 				350B014A20064BC500F93EAF /* ConfigEntry.m in Sources */,
 				35ACC5601FE24EF500470EAE /* ContactEntry.m in Sources */,
