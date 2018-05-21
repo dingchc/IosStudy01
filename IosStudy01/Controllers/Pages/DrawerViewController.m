@@ -24,6 +24,25 @@
     CustomView* view = [[CustomView alloc] initWithFrame:CGRectMake(0, 0, screenSize.width, screenSize.height)];
     
     [self.view addSubview:view];
+    
+    [self parseJson];
+}
+
+
+- (void) parseJson {
+    NSString *jsonStr = @"{\"error_code\":1,\"error_msg\":\"成功\",\"data\":{\"stu_array\":[{\"name\":\"学生A\",\"age\":12},{\"name\":\"学生B\",\"age\":13}]}}";
+    NSData *data = [jsonStr dataUsingEncoding:NSUTF8StringEncoding];
+    
+    NSMutableDictionary *dictionary = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableContainers error:nil];
+    
+    NSLog(@"dictionary=%@", dictionary);
+    
+    NSObject *obj = [dictionary objectForKey:@"data"];
+    NSLog(@"obj=%@", obj);
+    
+    for (NSDictionary *dic in obj) {
+        NSLog(@"name=%@, age=%@", dic[@"name"], dic[@"age"]);
+    }
 }
 
 - (void)didReceiveMemoryWarning {

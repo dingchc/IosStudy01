@@ -77,4 +77,48 @@ void * task(void* params) {
     return NULL;
 }
 
+- (void) callThread {
+    
+    dispatch_async(dispatch_get_global_queue(0, 0), ^{
+        NSLog(@"hello");
+    
+        dispatch_async(dispatch_get_main_queue(), ^{
+            NSLog(@"main");
+            
+        });
+    });
+    
+    dispatch_queue_t queue = dispatch_queue_create("com", DISPATCH_QUEUE_CONCURRENT);
+    
+    dispatch_async(queue, ^{
+        NSLog(@"Thread A");
+    });
+    
+    dispatch_async(queue, ^{
+        NSLog(@"Thread B");
+    });
+    
+    dispatch_async(queue, ^{
+        NSLog(@"Thread C");
+    });
+    
+    dispatch_group_t group = dispatch_group_create();
+    
+    dispatch_group_async(group, queue, ^{
+        NSLog(@"Thread A");
+    });
+    
+    dispatch_group_async(group, queue, ^{
+        NSLog(@"Thread B");
+    });
+    
+    dispatch_group_async(group, queue, ^{
+        NSLog(@"Thread C");
+    });
+    
+    dispatch_group_notify(group, queue, ^{
+        NSLog(@"");
+    });
+}
+
 @end
