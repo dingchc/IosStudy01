@@ -8,6 +8,8 @@
 
 #import "DrawerViewController.h"
 #import "CustomView.h"
+#import <sqlite3.h>
+#import "FMDatabase.h"
 
 @interface DrawerViewController ()
 
@@ -18,10 +20,24 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+    NSString* dbPath = [paths.firstObject stringByAppendingPathComponent:@"1.sqlite"];
+    
+    FMDatabase* db = [FMDatabase databaseWithPath:dbPath];
+    [db open];
+    
+    [db executeUpdate:@"create table if not "];
+    
+    FMResultSet* set = [db executeQuery:@""];
+    while ([set next]) {
+        [set stringForColumn:@"name"];
+    }
+    
+    
     self.view.backgroundColor = [UIColor whiteColor];
 
     CGSize screenSize = [UIScreen mainScreen].bounds.size;
-    CustomView* view = [[CustomView alloc] initWithFrame:CGRectMake(0, 0, screenSize.width, screenSize.height)];
+    CustomView* view = [[CustomView alloc] initWithFrame:CGRectMake(0, 64, screenSize.width, screenSize.height)];
     
     [self.view addSubview:view];
     
@@ -30,18 +46,23 @@
 
 
 - (void) parseJson {
+    
     NSString *jsonStr = @"{\"error_code\":1,\"error_msg\":\"成功\",\"data\":{\"stu_array\":[{\"name\":\"学生A\",\"age\":12},{\"name\":\"学生B\",\"age\":13}]}}";
     NSData *data = [jsonStr dataUsingEncoding:NSUTF8StringEncoding];
     
-    NSMutableDictionary *dictionary = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableContainers error:nil];
+    NSDictionary *dictionary = [NSJSONSerialization JSONObjectWithData:data options:0 error:nil];
     
     NSLog(@"dictionary=%@", dictionary);
     
-    NSObject *obj = [dictionary objectForKey:@"data"];
-    NSLog(@"obj=%@", obj);
+    NSDictionary *dataDict = dictionary[@"data"];
+    NSLog(@"dataDict=%@", dataDict);
     
-    for (NSDictionary *dic in obj) {
-        NSLog(@"name=%@, age=%@", dic[@"name"], dic[@"age"]);
+    NSArray* stuDictArray = dataDict[@"stu_array"];
+    
+    for (NSDictionary* stuDict in stuDictArray) {
+        NSLog(@"stuDict=%@", stuDict);
+        NSString* name = stuDict[@"name"];
+        NSLog(@"name=%@", name);
     }
 }
 

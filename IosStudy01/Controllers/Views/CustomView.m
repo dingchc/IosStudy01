@@ -14,7 +14,7 @@
 // An empty implementation adversely affects performance during animation.
 - (void)drawRect:(CGRect)rect {
     // Drawing code
-    [[UIColor whiteColor] setFill];
+    [[UIColor lightGrayColor] setFill];
     UIRectFill(rect);
     
     [[UIColor greenColor] setStroke];
@@ -48,9 +48,9 @@
     CGContextDrawPath(context, kCGPathFillStroke);
     
     CGContextScaleCTM(context, 1, -1);
-    CGContextTranslateCTM(context, 0, -180);
+    CGContextTranslateCTM(context, 0, -image.size.height);
     CGImageRef cgImage = image.CGImage;
-    CGContextDrawImage(context, CGRectMake(200, 80, image.size.width, image.size.height), cgImage);
+    CGContextDrawImage(context, CGRectMake(0, 10, image.size.width, image.size.height), cgImage);
 }
 
 @end
