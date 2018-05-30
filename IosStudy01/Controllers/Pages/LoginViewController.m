@@ -12,10 +12,13 @@
 #import "ThreadController.h"
 #import "DrawerViewController.h"
 #import <Masonry/Masonry.h>
+#import "UIImageView+WebCache.h"
+
 #define PADDING_LEFT 10
 
 @interface LoginViewController ()
 
+@property(nonatomic, strong) UIImageView *iconImageView;
 @property(nonatomic, strong) UIView* accountBgView;
 @property(nonatomic, strong) UILabel* accountLabel;
 @property(nonatomic, strong) UITextField* accountTextField;
@@ -42,6 +45,18 @@
     self.navigationItem.title = @"登录";
     
     [self.view addGestureRecognizer: tap];
+    
+    // 图标
+    [self.view addSubview:self.iconImageView];
+    
+    [self.iconImageView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.centerX.equalTo(self.view.mas_centerX);
+        make.height.equalTo(@96);
+        make.width.equalTo(@96);
+        make.top.equalTo(self.view).offset(100);
+    }];
+    
+    [self.iconImageView sd_setImageWithURL:[NSURL URLWithString:@"https://ws1.sinaimg.cn/large/610dc034ly1fjxu5qqdjoj20qo0xc0wk.jpg"] placeholderImage:[UIImage imageNamed:@"my_page_btn_bg"]];
     
     // 账号
     [self.view addSubview:self.accountBgView];
@@ -163,6 +178,17 @@
 - (void)timeon:(id )obj {
     NSLog(@"%s, %@", __FUNCTION__, obj);
     self.redLabel.text = @"888";
+}
+
+/**
+ * 图标
+ */
+- (UIImageView *)iconImageView {
+    if (!_iconImageView) {
+        _iconImageView = [[UIImageView alloc] init];
+        _iconImageView.image = [UIImage imageNamed:@"my_favorite_bg"];
+    }
+    return _iconImageView;
 }
 
 /**
