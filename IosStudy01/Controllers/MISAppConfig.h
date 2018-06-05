@@ -197,4 +197,5 @@ printf("================Line:[%d]==================\n", __LINE__);
 
 #define MIS_PAGE_MARGIN 15.0f
 
+#define K_PATH_DRAW @"kPath_draw"
 #endif

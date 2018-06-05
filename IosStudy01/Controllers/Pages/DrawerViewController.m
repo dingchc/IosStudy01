@@ -12,6 +12,7 @@
 #import "FMDatabase.h"
 #import "UIImageView+WebCache.h"
 #import "AFHTTPSessionManager.h"
+#import "CoreManager.h"
 
 @interface DrawerViewController ()
 
@@ -23,12 +24,12 @@
     [super viewDidLoad];
     
     // 初始化数据库
-    [self initDb];
+//    [self initDb];
     
     // 请求
 //    [self request];
 //    [self doPost];
-    [self afGet];
+    [[CoreManager instance] afGet];
     
     self.view.backgroundColor = [UIColor whiteColor];
 
@@ -37,18 +38,7 @@
     
     [self.view addSubview:view];
     
-    [self parseJson];
-}
-
-- (void) afGet {
-    
-    AFHTTPSessionManager *manager = [[AFHTTPSessionManager alloc] init];
-    
-    [manager GET:@"https://www.apiopen.top/meituApi" parameters:@{@"page":@"2"} progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
-        NSLog(@"success %@", responseObject);
-    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
-        NSLog(@"error %@", error);
-    }];
+//    [self parseJson];
 }
 
 /**

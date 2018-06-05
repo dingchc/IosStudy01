@@ -13,6 +13,8 @@
 #import "DrawerViewController.h"
 #import <Masonry/Masonry.h>
 #import "UIImageView+WebCache.h"
+#import "CoreManager.h"
+#import "MISAppConfig.h"
 
 #define PADDING_LEFT 10
 
@@ -36,6 +38,31 @@
 
 @implementation LoginViewController
 
+-(instancetype)init {
+    
+    NSLog(@"LoginViewController init");
+    self = [super init];
+    
+    if (self) {
+        [self addKVO];
+    }
+    return self;
+}
+
+-(void)dealloc {
+    
+    NSLog(@"LoginViewController dealloc");
+    
+    [self removeKVO];
+}
+
+-(void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary<NSKeyValueChangeKey,id> *)change context:(void *)context {
+    
+    if ([keyPath isEqualToString:@"name"]) {
+        NSLog(@"KVO changed ... %@", change);
+    }
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     
@@ -56,7 +83,7 @@
         make.top.equalTo(self.view).offset(100);
     }];
     
-    [self.iconImageView sd_setImageWithURL:[NSURL URLWithString:@"https://ws1.sinaimg.cn/large/610dc034ly1fjxu5qqdjoj20qo0xc0wk.jpg"] placeholderImage:[UIImage imageNamed:@"my_page_btn_bg"]];
+    [self.iconImageView sd_setImageWithURL:[NSURL URLWithString:@"https://ws1.sinaimg.cn/large/610dc034ly1fj78mpyvubj20u011idjg.jpg"] placeholderImage:[UIImage imageNamed:@"my_page_btn_bg"]];
     
     // 账号
     [self.view addSubview:self.accountBgView];
@@ -130,6 +157,14 @@
     // Do any additional setup after loading the view.
 }
 
+-(void) addKVO {
+    [[CoreManager instance] addObserver:self forKeyPath:@"name" options:NSKeyValueObservingOptionNew context:NULL];
+}
+
+-(void) removeKVO {
+    [[CoreManager instance] removeObserver:self forKeyPath:@"name"];
+}
+
 -(void) tapMe:(UIGestureRecognizer * )recognizer {
     [self.view  endEditing:YES];
 
@@ -160,9 +195,6 @@
     [self performSelector:@selector(timeon:) withObject:@1 afterDelay:1];
     
 //    NSData* data = [NSData dataWithContentsOfURL:[NSURL URLWithString:@"https://ss0.bdstatic.com/5aV1bjqh_Q23odCf/static/superman/img/logo/bd_logo1_31bdc765.png"]];
-    
-    
-
 
     dispatch_async(dispatch_get_global_queue(0, 0), ^{
         NSData* data = [NSData dataWithContentsOfURL:[NSURL URLWithString:@"https://ss0.bdstatic.com/5aV1bjqh_Q23odCf/static/superman/img/logo/bd_logo1_31bdc765.png"]];
@@ -323,6 +355,7 @@
 
 -(void)goNextPage {
 //    ThreadController* controller = [[ThreadController alloc] init];
+    
     DrawerViewController *controller = [[DrawerViewController alloc] init];
     [self.navigationController pushViewController:controller animated:YES];
 }
