@@ -9,6 +9,7 @@
 #import "MessageTextInputTableViewCell.h"
 #import "MessageEntry.h"
 #import <Masonry/Masonry.h>
+#import "UIImageView+WebCache.h"
 
 
 #define AVATAR_DIMEN 36
@@ -17,23 +18,29 @@
 
 @implementation MessageTextInputTableViewCell
 
--(instancetype)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier {
-    self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
+-(void)prepare {
     
-    if (self) {
+    self.selectionStyle = UITableViewCellSelectionStyleNone;
+    [self.contentView addSubview:self.avatarImageView];
+    [self.contentView addSubview:self.senderNameLabel];
+    [self.contentView addSubview:self.bubbleImageView];
+    [self.contentView addSubview:self.contentLabel];
+}
+
+-(void)placeSubViews {
+    
+}
+
+-(void)updateCellWithObj:(id)obj {
+    
+    if (obj) {
+        MessageEntry * entry = obj;
+        // use sd webimage
+        [self.avatarImageView sd_setImageWithURL:[NSURL URLWithString:entry.avatarUrl] placeholderImage:[UIImage imageNamed:@"Avatar_default_medium"]];
         
-//        self.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
-        self.selectionStyle = UITableViewCellSelectionStyleNone;
-        
-        [self.contentView addSubview:self.avatarImageView];
-        [self.contentView addSubview:self.senderNameLabel];
-        [self.contentView addSubview:self.bubbleImageView];
-        [self.contentView addSubview:self.contentLabel];
-//        [self.contentView addSubview:self.previewImageView];
-//        [self.contentView addSubview:self.audioImageView];
+        self.senderNameLabel.text = entry.senderName;
+        self.contentLabel.text = entry.content;
     }
-    
-    return self;
 }
 
 # pragma Getter & Setter
@@ -52,6 +59,7 @@
         _senderNameLabel = [[UILabel alloc]initWithFrame:CGRectMake(self.avatarImageView.frame.origin.x + self.avatarImageView.frame.size.width + HONRIZONTAL_MARGIN, 10, 80, 30)];
         _senderNameLabel.textColor = UIColor.grayColor;
         _senderNameLabel.font = [UIFont systemFontOfSize : 12];
+        _senderNameLabel.preferredMaxLayoutWidth = 80;
     }
     return _senderNameLabel;
 }
@@ -62,6 +70,7 @@
         _contentLabel.textColor = UIColor.blackColor;
         _contentLabel.font = [UIFont systemFontOfSize : 14];
         _contentLabel.numberOfLines = 2;
+        _contentLabel.preferredMaxLayoutWidth = self.frame.size.width - AVATAR_DIMEN * 2 - 20;
     }
     return _contentLabel;
 }
