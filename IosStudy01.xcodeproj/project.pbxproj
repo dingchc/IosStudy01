@@ -19,7 +19,7 @@
 		356B0FE1200CEA79009C54D3 /* my_credits_bg.png in Resources */ = {isa = PBXBuildFile; fileRef = 356B0FDC200CEA79009C54D3 /* my_credits_bg.png */; };
 		356B0FE2200CEA79009C54D3 /* school_forum_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 356B0FDD200CEA79009C54D3 /* school_forum_icon.png */; };
 		356B0FE92016261A009C54D3 /* MessageEntry.m in Sources */ = {isa = PBXBuildFile; fileRef = 356B0FE82016261A009C54D3 /* MessageEntry.m */; };
-		356B0FEC201A0E52009C54D3 /* MessageTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 356B0FEB201A0E52009C54D3 /* MessageTableViewCell.m */; };
+		356B0FEC201A0E52009C54D3 /* MessageTextInputTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 356B0FEB201A0E52009C54D3 /* MessageTextInputTableViewCell.m */; };
 		356B0FF7201A11DA009C54D3 /* MessageBubbleInBgHL@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 356B0FED201A11D9009C54D3 /* MessageBubbleInBgHL@2x.png */; };
 		356B0FF8201A11DA009C54D3 /* MessageVoiceOutPlayFrame03.png in Resources */ = {isa = PBXBuildFile; fileRef = 356B0FEE201A11D9009C54D3 /* MessageVoiceOutPlayFrame03.png */; };
 		356B0FF9201A11DA009C54D3 /* MessageBubbleOutBgHL@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 356B0FEF201A11DA009C54D3 /* MessageBubbleOutBgHL@2x.png */; };
@@ -105,6 +105,7 @@
 		35CFE17A20C4F206006BAD8E /* NSObject+YYModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 35CFE17720C4F206006BAD8E /* NSObject+YYModel.m */; };
 		35CFE17B20C4F206006BAD8E /* YYClassInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 35CFE17820C4F206006BAD8E /* YYClassInfo.m */; };
 		35CFE17F20C51C58006BAD8E /* CoreManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 35CFE17E20C51C58006BAD8E /* CoreManager.m */; };
+		35CFE18220C6D207006BAD8E /* MessageTextOutputTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 35CFE18120C6D207006BAD8E /* MessageTextOutputTableViewCell.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -137,8 +138,8 @@
 		356B0FDD200CEA79009C54D3 /* school_forum_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = school_forum_icon.png; sourceTree = "<group>"; };
 		356B0FE72016261A009C54D3 /* MessageEntry.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MessageEntry.h; sourceTree = "<group>"; };
 		356B0FE82016261A009C54D3 /* MessageEntry.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MessageEntry.m; sourceTree = "<group>"; };
-		356B0FEA201A0E52009C54D3 /* MessageTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MessageTableViewCell.h; sourceTree = "<group>"; };
-		356B0FEB201A0E52009C54D3 /* MessageTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MessageTableViewCell.m; sourceTree = "<group>"; };
+		356B0FEA201A0E52009C54D3 /* MessageTextInputTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MessageTextInputTableViewCell.h; sourceTree = "<group>"; };
+		356B0FEB201A0E52009C54D3 /* MessageTextInputTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MessageTextInputTableViewCell.m; sourceTree = "<group>"; };
 		356B0FED201A11D9009C54D3 /* MessageBubbleInBgHL@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "MessageBubbleInBgHL@2x.png"; sourceTree = "<group>"; };
 		356B0FEE201A11D9009C54D3 /* MessageVoiceOutPlayFrame03.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = MessageVoiceOutPlayFrame03.png; sourceTree = "<group>"; };
 		356B0FEF201A11DA009C54D3 /* MessageBubbleOutBgHL@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "MessageBubbleOutBgHL@2x.png"; sourceTree = "<group>"; };
@@ -291,6 +292,8 @@
 		35CFE17920C4F206006BAD8E /* NSObject+YYModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+YYModel.h"; sourceTree = "<group>"; };
 		35CFE17D20C51C58006BAD8E /* CoreManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CoreManager.h; sourceTree = "<group>"; };
 		35CFE17E20C51C58006BAD8E /* CoreManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CoreManager.m; sourceTree = "<group>"; };
+		35CFE18020C6D207006BAD8E /* MessageTextOutputTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MessageTextOutputTableViewCell.h; sourceTree = "<group>"; };
+		35CFE18120C6D207006BAD8E /* MessageTextOutputTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MessageTextOutputTableViewCell.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -324,8 +327,10 @@
 				35ACC55D1FE24EF500470EAE /* ContactTableViewCell.m */,
 				35B37D581FE8D6860031ADCA /* MISTableViewCell.h */,
 				35B37D591FE8D6860031ADCA /* MISTableViewCell.m */,
-				356B0FEA201A0E52009C54D3 /* MessageTableViewCell.h */,
-				356B0FEB201A0E52009C54D3 /* MessageTableViewCell.m */,
+				356B0FEA201A0E52009C54D3 /* MessageTextInputTableViewCell.h */,
+				356B0FEB201A0E52009C54D3 /* MessageTextInputTableViewCell.m */,
+				35CFE18020C6D207006BAD8E /* MessageTextOutputTableViewCell.h */,
+				35CFE18120C6D207006BAD8E /* MessageTextOutputTableViewCell.m */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -796,6 +801,7 @@
 				3537C65B1FE6AC4900F377B4 /* TopicListViewController.m in Sources */,
 				35CFE12220BEE536006BAD8E /* SDWebImageFrame.m in Sources */,
 				358AA39C20B42DC5001E23A0 /* FMDatabase.m in Sources */,
+				35CFE18220C6D207006BAD8E /* MessageTextOutputTableViewCell.m in Sources */,
 				35CFE11E20BEE536006BAD8E /* SDWebImageCoder.m in Sources */,
 				35CFE11B20BEE536006BAD8E /* NSImage+WebCache.m in Sources */,
 				350B01472006490D00F93EAF /* ConfigTableViewCell.m in Sources */,
@@ -816,7 +822,7 @@
 				35CFE16C20C4EF84006BAD8E /* AFHTTPSessionManager.m in Sources */,
 				35CFE11C20BEE536006BAD8E /* UIImage+WebP.m in Sources */,
 				35ACC5631FE24EF500470EAE /* MyTabBarController.m in Sources */,
-				356B0FEC201A0E52009C54D3 /* MessageTableViewCell.m in Sources */,
+				356B0FEC201A0E52009C54D3 /* MessageTextInputTableViewCell.m in Sources */,
 				35CFE17020C4EF84006BAD8E /* AFSecurityPolicy.m in Sources */,
 				35CFE11220BEE536006BAD8E /* SDImageCacheConfig.m in Sources */,
 				358AA39F20B42DC5001E23A0 /* FMDatabaseQueue.m in Sources */,

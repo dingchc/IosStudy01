@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface MessageTableViewCell : UITableViewCell
+@interface MessageTextInputTableViewCell : UITableViewCell
 
 @property(nonatomic, strong) UIImageView* avatarImageView;
 @property(nonatomic, strong) UILabel* senderNameLabel;

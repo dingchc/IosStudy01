@@ -6,7 +6,7 @@
 //  Copyright © 2018 ding. All rights reserved.
 //
 
-#import "MessageTableViewCell.h"
+#import "MessageTextInputTableViewCell.h"
 #import "MessageEntry.h"
 #import <Masonry/Masonry.h>
 
@@ -15,7 +15,7 @@
 #define HONRIZONTAL_MARGIN 10
 
 
-@implementation MessageTableViewCell
+@implementation MessageTextInputTableViewCell
 
 -(instancetype)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier {
     self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];

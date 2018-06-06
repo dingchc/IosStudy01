@@ -327,7 +327,7 @@
         [_clickButton setBackgroundImage:[UIImage imageWithColor:[UIColor orangeColor]] forState:UIControlStateNormal];
         [_clickButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
         [_clickButton setTitleColor:[UIColor grayColor] forState:UIControlStateHighlighted];
-        [_clickButton addTarget:self action:@selector(goNextPage) forControlEvents:UIControlEventTouchUpInside];
+        [_clickButton addTarget:self action:@selector(goMainPage) forControlEvents:UIControlEventTouchUpInside];
     }
     return _clickButton;
 }
