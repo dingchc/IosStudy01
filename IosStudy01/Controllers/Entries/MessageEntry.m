@@ -21,4 +21,12 @@
     
     return entry;
 }
+
+-(BOOL)isIsInput {
+    if (!_isInput) {
+        _isInput = YES;
+    }
+    return _isInput;
+}
+
 @end

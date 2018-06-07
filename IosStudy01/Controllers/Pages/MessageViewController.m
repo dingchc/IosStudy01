@@ -43,8 +43,13 @@
 
 -(void)initData {
     
-    for (int i = 0; i < 2; i++) {
+    for (int i = 0; i < 3; i++) {
         MessageEntry* entry = [MessageEntry initWithMsgId:i withSenderId:i withSenderName:@"丁崇慈" withContent:@"今天天气还行，出来玩吧，一起去抓鸟，好吗？加油，快点出来!今天天气还行，出来玩吧，一起去抓鸟，好吗？加油，快点出来!" withAvatar:@"https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1521652236226&di=49fe9ae20e31319b618e2e7364d9e96c&imgtype=0&src=http%3A%2F%2Fpic.58pic.com%2F58pic%2F14%2F15%2F01%2F07958PICJg8_1024.jpg"];
+        
+        if ((i + 1) % 3 == 0) {
+            entry.isInput = YES;
+            entry.avatarUrl = @"https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1528392333351&di=058d54db5cce451f51144748d5a96d23&imgtype=0&src=http%3A%2F%2Fimg.duoziwang.com%2F2016%2F12%2F08%2F17021214412.jpg";
+        }
         [self.messageArray addObject:entry];
     }
 }
@@ -61,17 +66,15 @@
     
     MISTableViewCell* cell = nil;
     
-//    // input msg
-//    if (entry.senderId % 3 == 0) {
-//
-//        cell = [self.messageTableView dequeueReusableCellWithIdentifier:TAG_INPUT];
-//    }
-//    // output msg
-//    else {
-//        cell = [self.messageTableView dequeueReusableCellWithIdentifier:TAG_OUTPUT];
-//    }
+    // input msg
+    if (entry.isInput) {
+        cell = [self.messageTableView dequeueReusableCellWithIdentifier:TAG_INPUT];
+    }
+    // output msg
+    else {
+        cell = [self.messageTableView dequeueReusableCellWithIdentifier:TAG_OUTPUT];
+    }
     
-    cell = [self.messageTableView dequeueReusableCellWithIdentifier:TAG_INPUT];
     [cell updateCellWithObj:entry];
     
     return cell;
@@ -84,11 +87,16 @@
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
 
     MessageEntry* entry = self.messageArray[indexPath.row];
-    CGFloat height = [MessageTextInputTableViewCell heightForCellWithObj:entry];
+    CGFloat height = 0;
     
-    NSLog(@"height = %f", height);
+    if (entry.isInput) {
+        height = [MessageTextInputTableViewCell heightForCellWithObj:entry];
+        NSLog(@"1 height=%f", height);
+    } else {
+        height = [MessageTextOutputTableViewCell heightForCellWithObj:entry];
+        NSLog(@"2 height=%f", height);
+    }
     return height;
-//    return 100;
 }
 
 

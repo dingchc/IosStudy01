@@ -8,25 +8,48 @@
 
 #import "MessageTextOutputTableViewCell.h"
 #import "MISAppConfig.h"
+#import <Masonry/Masonry.h>
+#import "UIImageView+WebCache.h"
+#import "MessageEntry.h"
 
 #define AVATAR_DIMEN 36
 #define HONRIZONTAL_MARGIN 10
 
 @implementation MessageTextOutputTableViewCell
 
--(instancetype)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier {
-    self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
+-(void)prepare {
     
-    if (self) {
+    self.selectionStyle = UITableViewCellSelectionStyleNone;
+    [self.contentView addSubview:self.avatarImageView];
+//    [self.contentView addSubview:self.senderNameLabel];
+//    [self.contentView addSubview:self.bubbleImageView];
+//    [self.contentView addSubview:self.contentLabel];
+}
+
+-(void)placeSubViews {
+    
+    [self.avatarImageView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.right.equalTo(self.contentView).offset(@-HONRIZONTAL_MARGIN);
+        make.top.equalTo(@10);
+        make.size.equalTo(@AVATAR_DIMEN);
+    }];
+    
+    [self.senderNameLabel mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.right.equalTo(self.contentView.mas_left);
+        make.top.equalTo(self.avatarImageView);
+    }];
+}
+
+-(void)updateCellWithObj:(id)obj {
+    
+    if (obj) {
+        MessageEntry * entry = obj;
+        // use sd webimage
+        [self.avatarImageView sd_setImageWithURL:[NSURL URLWithString:entry.avatarUrl] placeholderImage:[UIImage imageNamed:@"Avatar_default_medium"]];
         
-        self.selectionStyle = UITableViewCellSelectionStyleNone;
-        [self.contentView addSubview:self.avatarImageView];
-        [self.contentView addSubview:self.senderNameLabel];
-        [self.contentView addSubview:self.bubbleImageView];
-        [self.contentView addSubview:self.contentLabel];
+        self.senderNameLabel.text = entry.senderName;
+        self.contentLabel.text = entry.content;
     }
-    
-    return self;
 }
 
 # pragma Getter & Setter

@@ -15,9 +15,9 @@
 @property(nonatomic, copy) NSString* avatarUrl;
 @property(nonatomic) NSInteger senderId;
 @property(nonatomic, copy) NSString* senderName;
-
 @property(nonatomic, copy) NSString* content;
 @property(nonatomic) NSInteger recvTime;
+@property(nonatomic) BOOL isInput;
 
 /**
  * 消息类型:1-文本、2-图片、4-语音、8-公共账号
