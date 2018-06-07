@@ -9,6 +9,7 @@
 #import "MessageTextInputTableViewCell.h"
 #import "MessageEntry.h"
 #import <Masonry/Masonry.h>
+#import "MISAppConfig.h"
 #import "UIImageView+WebCache.h"
 
 
@@ -28,7 +29,27 @@
 }
 
 -(void)placeSubViews {
-    
+	[self.avatarImageView mas_makeConstraints:^(MASConstraintMaker *make) {
+		make.size.equalTo(@(AVATAR_DIMEN));
+		make.top.equalTo(@20);
+		make.left.equalTo(@HONRIZONTAL_MARGIN);
+	}];
+	
+	[self.senderNameLabel mas_makeConstraints:^(MASConstraintMaker *make) {
+		make.left.equalTo(self.avatarImageView.mas_right).offset(HONRIZONTAL_MARGIN);
+		make.top.equalTo(self.avatarImageView);
+	}];
+	
+	[self.contentLabel mas_makeConstraints:^(MASConstraintMaker *make) {
+		make.edges.equalTo(self.bubbleImageView).insets(UIEdgeInsetsMake(5.0, 10.0f, 5.0f, 5.0));
+	}];
+	
+	[self.bubbleImageView mas_makeConstraints:^(MASConstraintMaker *make) {
+		make.left.equalTo(self.senderNameLabel);
+		make.top.equalTo(self.senderNameLabel.mas_bottom).offset(2.0);
+		make.bottom.equalTo(self.contentView).offset(-HONRIZONTAL_MARGIN);
+		make.right.equalTo(self.contentView).offset(-(AVATAR_DIMEN));
+	}];
 }
 
 -(void)updateCellWithObj:(id)obj {
@@ -59,7 +80,6 @@
         _senderNameLabel = [[UILabel alloc]initWithFrame:CGRectMake(self.avatarImageView.frame.origin.x + self.avatarImageView.frame.size.width + HONRIZONTAL_MARGIN, 10, 80, 30)];
         _senderNameLabel.textColor = UIColor.grayColor;
         _senderNameLabel.font = [UIFont systemFontOfSize : 12];
-        _senderNameLabel.preferredMaxLayoutWidth = 80;
     }
     return _senderNameLabel;
 }
@@ -69,8 +89,9 @@
         _contentLabel = [[UILabel alloc]initWithFrame:CGRectMake(self.senderNameLabel.frame.origin.x + 20, 46, self.frame.size.width - AVATAR_DIMEN * 2 - 20, 40)];
         _contentLabel.textColor = UIColor.blackColor;
         _contentLabel.font = [UIFont systemFontOfSize : 14];
-        _contentLabel.numberOfLines = 2;
-        _contentLabel.preferredMaxLayoutWidth = self.frame.size.width - AVATAR_DIMEN * 2 - 20;
+        _contentLabel.numberOfLines = 0;
+		_contentLabel.preferredMaxLayoutWidth = VIEW_WIDTH - AVATAR_DIMEN * 2 - HONRIZONTAL_MARGIN * 2 - 15.0f;
+		_contentLabel.lineBreakMode = NSLineBreakByWordWrapping;
     }
     return _contentLabel;
 }
