@@ -21,23 +21,34 @@
     
     self.selectionStyle = UITableViewCellSelectionStyleNone;
     [self.contentView addSubview:self.avatarImageView];
-//    [self.contentView addSubview:self.senderNameLabel];
-//    [self.contentView addSubview:self.bubbleImageView];
-//    [self.contentView addSubview:self.contentLabel];
+    [self.contentView addSubview:self.senderNameLabel];
+    [self.contentView addSubview:self.bubbleImageView];
+    [self.contentView addSubview:self.contentLabel];
 }
 
 -(void)placeSubViews {
     
     [self.avatarImageView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.width.equalTo(@AVATAR_DIMEN);
+        make.height.equalTo(@AVATAR_DIMEN);
         make.right.equalTo(self.contentView).offset(@-HONRIZONTAL_MARGIN);
         make.top.equalTo(@10);
-        make.size.equalTo(@AVATAR_DIMEN);
     }];
     
     [self.senderNameLabel mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.right.equalTo(self.contentView.mas_left);
+        make.right.equalTo(self.avatarImageView.mas_left).offset(@-HONRIZONTAL_MARGIN);
         make.top.equalTo(self.avatarImageView);
     }];
+    
+    [self.bubbleImageView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.equalTo(self.senderNameLabel.mas_bottom).offset(2.0);
+        make.left.equalTo(@AVATAR_DIMEN);
+        make.right.equalTo(self.senderNameLabel.mas_right);
+        make.bottom.equalTo(self.contentView).offset(-HONRIZONTAL_MARGIN);
+    }];
+    
+    [self.contentLabel mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.edges.equalTo(self.bubbleImageView).insets(UIEdgeInsetsMake(10.0, 10.0f, 10.0f, 15.0));}];
 }
 
 -(void)updateCellWithObj:(id)obj {
@@ -80,7 +91,9 @@
         _contentLabel = [[UILabel alloc]initWithFrame:CGRectMake(x, 46, width, 40)];
         _contentLabel.textColor = UIColor.blackColor;
         _contentLabel.font = [UIFont systemFontOfSize : 14];
-        _contentLabel.numberOfLines = 2;
+        _contentLabel.numberOfLines = 0;
+        _contentLabel.preferredMaxLayoutWidth = VIEW_WIDTH - AVATAR_DIMEN * 2 - HONRIZONTAL_MARGIN * 2 - 25.0f;
+        _contentLabel.lineBreakMode = NSLineBreakByWordWrapping;
     }
     return _contentLabel;
 }

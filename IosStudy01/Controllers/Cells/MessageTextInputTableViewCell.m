@@ -40,16 +40,16 @@
 		make.top.equalTo(self.avatarImageView);
 	}];
 	
-	[self.contentLabel mas_makeConstraints:^(MASConstraintMaker *make) {
-		make.edges.equalTo(self.bubbleImageView).insets(UIEdgeInsetsMake(5.0, 10.0f, 5.0f, 5.0));
-	}];
-	
 	[self.bubbleImageView mas_makeConstraints:^(MASConstraintMaker *make) {
 		make.left.equalTo(self.senderNameLabel);
 		make.top.equalTo(self.senderNameLabel.mas_bottom).offset(2.0);
 		make.bottom.equalTo(self.contentView).offset(-HONRIZONTAL_MARGIN);
 		make.right.equalTo(self.contentView).offset(-(AVATAR_DIMEN));
 	}];
+    
+    [self.contentLabel mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.edges.equalTo(self.bubbleImageView).insets(UIEdgeInsetsMake(10.0, 15.0f, 10.0f, 10.0));
+    }];
 }
 
 -(void)updateCellWithObj:(id)obj {
@@ -90,7 +90,7 @@
         _contentLabel.textColor = UIColor.blackColor;
         _contentLabel.font = [UIFont systemFontOfSize : 14];
         _contentLabel.numberOfLines = 0;
-		_contentLabel.preferredMaxLayoutWidth = VIEW_WIDTH - AVATAR_DIMEN * 2 - HONRIZONTAL_MARGIN * 2 - 15.0f;
+		_contentLabel.preferredMaxLayoutWidth = VIEW_WIDTH - AVATAR_DIMEN * 2 - HONRIZONTAL_MARGIN * 2 - 25.0f;
 		_contentLabel.lineBreakMode = NSLineBreakByWordWrapping;
     }
     return _contentLabel;
