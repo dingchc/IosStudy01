@@ -74,7 +74,7 @@
     MessageEntry* entry5 = [MessageEntry initWithMsgId:5 withSenderId:1 withSenderName:@"毛毛" withContent:@"" withAvatar:senderAvatarUrl];
     entry5.type = 2;
     entry5.isInput = YES;
-    entry5.thumbUrl = @"https://ss1.bdstatic.com/70cFvXSh_Q1YnxGkpoWK1HF6hhy/it/u=1462059966,906098401&fm=27&gp=0.jpg";
+    entry5.thumbUrl = @"https://ss0.bdstatic.com/70cFvHSh_Q1YnxGkpoWK1HF6hhy/it/u=1239908697,3156627091&fm=27&gp=0.jpg";
     
     [self.messageArray addObject:entry5];
     
