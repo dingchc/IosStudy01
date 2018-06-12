@@ -7,13 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "MISTableViewCell.h"
+#import "MessageOutputTableViewCell.h"
 
-@interface MessageTextOutputTableViewCell : MISTableViewCell
+@interface MessageTextOutputTableViewCell : MessageOutputTableViewCell
 
-@property(nonatomic, strong) UIImageView* avatarImageView;
-@property(nonatomic, strong) UILabel* senderNameLabel;
 @property(nonatomic, strong) UILabel* contentLabel;
-@property(nonatomic, strong) UIImageView* bubbleImageView;
 
 @end

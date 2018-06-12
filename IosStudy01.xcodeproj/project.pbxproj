@@ -108,6 +108,8 @@
 		35CFE18220C6D207006BAD8E /* MessageTextOutputTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 35CFE18120C6D207006BAD8E /* MessageTextOutputTableViewCell.m */; };
 		35CFE18520CF4EBE006BAD8E /* MessageImageInputTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 35CFE18420CF4EBD006BAD8E /* MessageImageInputTableViewCell.m */; };
 		35CFE18820CF55B6006BAD8E /* MessageTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 35CFE18720CF55B6006BAD8E /* MessageTableViewCell.m */; };
+		35CFE18B20CF6273006BAD8E /* MessageInputTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 35CFE18A20CF6273006BAD8E /* MessageInputTableViewCell.m */; };
+		35CFE18E20CF6395006BAD8E /* MessageOutputTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 35CFE18D20CF6395006BAD8E /* MessageOutputTableViewCell.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -300,6 +302,10 @@
 		35CFE18420CF4EBD006BAD8E /* MessageImageInputTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MessageImageInputTableViewCell.m; sourceTree = "<group>"; };
 		35CFE18620CF55B6006BAD8E /* MessageTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MessageTableViewCell.h; sourceTree = "<group>"; };
 		35CFE18720CF55B6006BAD8E /* MessageTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MessageTableViewCell.m; sourceTree = "<group>"; };
+		35CFE18920CF6273006BAD8E /* MessageInputTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MessageInputTableViewCell.h; sourceTree = "<group>"; };
+		35CFE18A20CF6273006BAD8E /* MessageInputTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MessageInputTableViewCell.m; sourceTree = "<group>"; };
+		35CFE18C20CF6395006BAD8E /* MessageOutputTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MessageOutputTableViewCell.h; sourceTree = "<group>"; };
+		35CFE18D20CF6395006BAD8E /* MessageOutputTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MessageOutputTableViewCell.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -341,6 +347,10 @@
 				35CFE18420CF4EBD006BAD8E /* MessageImageInputTableViewCell.m */,
 				35CFE18620CF55B6006BAD8E /* MessageTableViewCell.h */,
 				35CFE18720CF55B6006BAD8E /* MessageTableViewCell.m */,
+				35CFE18920CF6273006BAD8E /* MessageInputTableViewCell.h */,
+				35CFE18A20CF6273006BAD8E /* MessageInputTableViewCell.m */,
+				35CFE18C20CF6395006BAD8E /* MessageOutputTableViewCell.h */,
+				35CFE18D20CF6395006BAD8E /* MessageOutputTableViewCell.m */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -807,6 +817,7 @@
 				3537C65E1FE6B31200F377B4 /* TopicTableViewCell.m in Sources */,
 				35ACC5611FE24EF500470EAE /* ContactViewController.m in Sources */,
 				35CFE12620BEE536006BAD8E /* UIImage+ForceDecode.m in Sources */,
+				35CFE18E20CF6395006BAD8E /* MessageOutputTableViewCell.m in Sources */,
 				350B0144200646FB00F93EAF /* ConfigViewController.m in Sources */,
 				35CFE11A20BEE536006BAD8E /* SDWebImageGIFCoder.m in Sources */,
 				3537C65B1FE6AC4900F377B4 /* TopicListViewController.m in Sources */,
@@ -848,6 +859,7 @@
 				350B014A20064BC500F93EAF /* ConfigEntry.m in Sources */,
 				35ACC5601FE24EF500470EAE /* ContactEntry.m in Sources */,
 				35ACC57D1FE2551500470EAE /* UIImage+MISColor.m in Sources */,
+				35CFE18B20CF6273006BAD8E /* MessageInputTableViewCell.m in Sources */,
 				356B0FE92016261A009C54D3 /* MessageEntry.m in Sources */,
 				35CFE11120BEE536006BAD8E /* SDWebImageCompat.m in Sources */,
 				35CFE11D20BEE536006BAD8E /* SDImageCache.m in Sources */,
