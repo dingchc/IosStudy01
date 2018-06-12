@@ -1,12 +1,12 @@
 //
-//  MessageTableViewCell.m
+//  MessageImageInputTableViewCell.m
 //  IosStudy01
 //
-//  Created by Ding on 25/01/2018.
+//  Created by Ding on 2018/6/12.
 //  Copyright © 2018 ding. All rights reserved.
 //
 
-#import "MessageTextInputTableViewCell.h"
+#import "MessageImageInputTableViewCell.h"
 #import "MessageEntry.h"
 #import <Masonry/Masonry.h>
 #import "MISAppConfig.h"
@@ -17,7 +17,7 @@
 #define HONRIZONTAL_MARGIN 10
 
 
-@implementation MessageTextInputTableViewCell
+@implementation MessageImageInputTableViewCell
 
 -(void)prepare {
     
@@ -25,29 +25,29 @@
     [self.contentView addSubview:self.avatarImageView];
     [self.contentView addSubview:self.senderNameLabel];
     [self.contentView addSubview:self.bubbleImageView];
-    [self.contentView addSubview:self.contentLabel];
+    [self.contentView addSubview:self.contentImageView];
 }
 
 -(void)placeSubViews {
-	[self.avatarImageView mas_makeConstraints:^(MASConstraintMaker *make) {
-		make.size.equalTo(@(AVATAR_DIMEN));
-		make.top.equalTo(@20);
-		make.left.equalTo(@HONRIZONTAL_MARGIN);
-	}];
-	
-	[self.senderNameLabel mas_makeConstraints:^(MASConstraintMaker *make) {
-		make.left.equalTo(self.avatarImageView.mas_right).offset(HONRIZONTAL_MARGIN);
-		make.top.equalTo(self.avatarImageView);
-	}];
-	
-	[self.bubbleImageView mas_makeConstraints:^(MASConstraintMaker *make) {
-		make.left.equalTo(self.senderNameLabel);
-		make.top.equalTo(self.senderNameLabel.mas_bottom).offset(2.0);
-		make.bottom.equalTo(self.contentView).offset(-HONRIZONTAL_MARGIN);
-		make.right.equalTo(self.contentView).offset(-(AVATAR_DIMEN));
-	}];
+    [self.avatarImageView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.size.equalTo(@(AVATAR_DIMEN));
+        make.top.equalTo(@20);
+        make.left.equalTo(@HONRIZONTAL_MARGIN);
+    }];
     
-    [self.contentLabel mas_makeConstraints:^(MASConstraintMaker *make) {
+    [self.senderNameLabel mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.equalTo(self.avatarImageView.mas_right).offset(HONRIZONTAL_MARGIN);
+        make.top.equalTo(self.avatarImageView);
+    }];
+    
+    [self.bubbleImageView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.equalTo(self.senderNameLabel);
+        make.top.equalTo(self.senderNameLabel.mas_bottom).offset(2.0);
+        make.bottom.equalTo(self.contentView).offset(-HONRIZONTAL_MARGIN);
+        make.right.equalTo(self.contentView).offset(-(AVATAR_DIMEN));
+    }];
+    
+    [self.contentImageView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.edges.equalTo(self.bubbleImageView).insets(UIEdgeInsetsMake(10.0, 15.0f, 10.0f, 10.0));
     }];
 }
@@ -60,7 +60,8 @@
         [self.avatarImageView sd_setImageWithURL:[NSURL URLWithString:entry.avatarUrl] placeholderImage:[UIImage imageNamed:@"Avatar_default_medium"]];
         
         self.senderNameLabel.text = entry.senderName;
-        self.contentLabel.text = entry.content;
+        
+        [self.contentImageView sd_setImageWithURL:[NSURL URLWithString:entry.thumbUrl] placeholderImage:[UIImage imageNamed:@"Thumb_Placeholder"]];
     }
 }
 
@@ -84,16 +85,12 @@
     return _senderNameLabel;
 }
 
--(UILabel *)contentLabel {
-    if (!_contentLabel) {
-        _contentLabel = [[UILabel alloc]initWithFrame:CGRectMake(self.senderNameLabel.frame.origin.x + 20, 46, self.frame.size.width - AVATAR_DIMEN * 2 - 20, 40)];
-        _contentLabel.textColor = UIColor.blackColor;
-        _contentLabel.font = [UIFont systemFontOfSize : 12];
-        _contentLabel.numberOfLines = 0;
-		_contentLabel.preferredMaxLayoutWidth = VIEW_WIDTH - AVATAR_DIMEN * 2 - HONRIZONTAL_MARGIN * 2 - 25.0f;
-		_contentLabel.lineBreakMode = NSLineBreakByWordWrapping;
+-(UIImageView *)contentImageView {
+    
+    if (!_contentImageView) {
+        _contentImageView = [[UIImageView alloc] init];
     }
-    return _contentLabel;
+    return _contentImageView;
 }
 
 - (UIImageView *)bubbleImageView {
@@ -108,4 +105,3 @@
 
 #undef AVATAR_DIMEN
 #undef HONRIZONTAL_MARGIN
-

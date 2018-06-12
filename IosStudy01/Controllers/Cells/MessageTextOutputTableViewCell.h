@@ -15,7 +15,5 @@
 @property(nonatomic, strong) UILabel* senderNameLabel;
 @property(nonatomic, strong) UILabel* contentLabel;
 @property(nonatomic, strong) UIImageView* bubbleImageView;
-@property(nonatomic, strong) UIImageView* previewImageView;
-@property(nonatomic, strong) UIImageView* audioImageView;
 
 @end

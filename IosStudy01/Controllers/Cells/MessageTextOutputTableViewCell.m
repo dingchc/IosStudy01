@@ -90,26 +90,12 @@
         CGFloat x = (self.senderNameLabel.frame.origin.x + self.senderNameLabel.frame.size.width) - width;
         _contentLabel = [[UILabel alloc]initWithFrame:CGRectMake(x, 46, width, 40)];
         _contentLabel.textColor = UIColor.blackColor;
-        _contentLabel.font = [UIFont systemFontOfSize : 14];
+        _contentLabel.font = [UIFont systemFontOfSize : 12];
         _contentLabel.numberOfLines = 0;
         _contentLabel.preferredMaxLayoutWidth = VIEW_WIDTH - AVATAR_DIMEN * 2 - HONRIZONTAL_MARGIN * 2 - 25.0f;
         _contentLabel.lineBreakMode = NSLineBreakByWordWrapping;
     }
     return _contentLabel;
-}
-
--(UIImageView *)previewImageView {
-    if (!_previewImageView) {
-        _previewImageView = [[UIImageView alloc]init];
-    }
-    return _previewImageView;
-}
-
--(UIImageView *)audioImageView {
-    if (!_audioImageView) {
-        _audioImageView = [[UIImageView alloc]init];
-    }
-    return _audioImageView;
 }
 
 - (UIImageView *)bubbleImageView {
