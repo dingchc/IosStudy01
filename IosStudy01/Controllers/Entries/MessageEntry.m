@@ -19,6 +19,8 @@
     entry.content = content;
     entry.avatarUrl = avatarUrl;
     
+    entry.type = 1;
+    
     return entry;
 }
 

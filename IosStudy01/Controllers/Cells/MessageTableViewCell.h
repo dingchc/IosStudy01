@@ -21,8 +21,6 @@
 @property(nonatomic, strong) UILabel* senderNameLabel;
 @property(nonatomic, strong) UIImageView* bubbleImageView;
 
-+(NSString*) myTag;
-
 @end
 
 #endif

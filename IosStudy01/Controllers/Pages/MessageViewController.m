@@ -10,6 +10,7 @@
 #import "MessageTextInputTableViewCell.h"
 #import "MessageTextOutputTableViewCell.h"
 #import "MessageImageInputTableViewCell.h"
+#import "MessageImageOutputTableViewCell.h"
 #import "MessageEntry.h"
 #import "UIImageView+WebCache.h"
 
@@ -72,6 +73,8 @@
     // 图片
     MessageEntry* entry5 = [MessageEntry initWithMsgId:5 withSenderId:1 withSenderName:@"毛毛" withContent:@"" withAvatar:senderAvatarUrl];
     entry5.type = 2;
+    entry5.isInput = YES;
+    entry5.thumbUrl = @"https://ss1.bdstatic.com/70cFvXSh_Q1YnxGkpoWK1HF6hhy/it/u=1462059966,906098401&fm=27&gp=0.jpg";
     
     [self.messageArray addObject:entry5];
     
@@ -90,13 +93,30 @@
     
     MISTableViewCell* cell = nil;
     
-    // input msg
+//    // input msg
+//    if (entry.isInput) {
+//        cell = [self.messageTableView dequeueReusableCellWithIdentifier:TAG_INPUT_TEXT];
+//    }
+//    // output msg
+//    else {
+//        cell = [self.messageTableView dequeueReusableCellWithIdentifier:TAG_OUTPUT_TEXT];
+//    }
+    
     if (entry.isInput) {
-        cell = [self.messageTableView dequeueReusableCellWithIdentifier:TAG_INPUT_TEXT];
-    }
-    // output msg
-    else {
-        cell = [self.messageTableView dequeueReusableCellWithIdentifier:TAG_OUTPUT_TEXT];
+        if (entry.type == 1) {
+            cell = [self.messageTableView dequeueReusableCellWithIdentifier:[MessageTextInputTableViewCell reuseIdentifier]];
+        }
+        else if (entry.type == 2) {
+            cell = [self.messageTableView dequeueReusableCellWithIdentifier:[MessageImageInputTableViewCell reuseIdentifier]];
+        }
+    } else {
+        
+        if (entry.type == 1) {
+            cell = [self.messageTableView dequeueReusableCellWithIdentifier:[MessageTextOutputTableViewCell reuseIdentifier]];
+        }
+        else if (entry.type == 2) {
+            cell = [self.messageTableView dequeueReusableCellWithIdentifier:[MessageImageOutputTableViewCell reuseIdentifier]];
+        }
     }
     
     [cell updateCellWithObj:entry];
@@ -108,18 +128,35 @@
     return self.messageArray.count;
 }
 
--(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+-(CGFloat)tableView:(MessageTableViewCell *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
 
     MessageEntry* entry = self.messageArray[indexPath.row];
     CGFloat height = 0;
     
     if (entry.isInput) {
-        height = [MessageTextInputTableViewCell heightForCellWithObj:entry];
+        
+        if (entry.type == 1) {
+            height = [MessageTextInputTableViewCell heightForCellWithObj:entry];
+        }
+        else if (entry.type == 2) {
+            height = [MessageImageInputTableViewCell heightForCellWithObj:entry];
+        }
+        
         NSLog(@"1 height=%f", height);
     } else {
-        height = [MessageTextOutputTableViewCell heightForCellWithObj:entry];
+        
+        if (entry.type == 1) {
+            height = [MessageTextOutputTableViewCell heightForCellWithObj:entry];
+        }
+        else if (entry.type == 2) {
+            height = [MessageImageOutputTableViewCell heightForCellWithObj:entry];
+        }
+        
         NSLog(@"2 height=%f", height);
     }
+    
+//    height = [MessageTableViewCell heightForCellWithObj:entry];
+    
     return height;
 }
 
@@ -134,11 +171,11 @@
         _messageTableView.separatorStyle = UITableViewCellEditingStyleNone;
     }
     
-    [_messageTableView registerClass:[MessageTextInputTableViewCell class] forCellReuseIdentifier:TAG_INPUT_TEXT];
-    [_messageTableView registerClass:[MessageTextOutputTableViewCell class] forCellReuseIdentifier:TAG_OUTPUT_TEXT];
+    [_messageTableView registerClass:[MessageTextInputTableViewCell class] forCellReuseIdentifier:[MessageTextInputTableViewCell reuseIdentifier]];
+    [_messageTableView registerClass:[MessageTextOutputTableViewCell class] forCellReuseIdentifier:[MessageTextOutputTableViewCell reuseIdentifier]];
     
-    [_messageTableView registerClass:[MessageImageInputTableViewCell class] forCellReuseIdentifier:TAG_INPUT_IMAGE];
-    [_messageTableView registerClass:[MessageImageInputTableViewCell class] forCellReuseIdentifier:TAG_INPUT_IMAGE];
+    [_messageTableView registerClass:[MessageImageInputTableViewCell class] forCellReuseIdentifier:[MessageImageInputTableViewCell reuseIdentifier]];
+    [_messageTableView registerClass:[MessageImageOutputTableViewCell class] forCellReuseIdentifier:[MessageImageOutputTableViewCell reuseIdentifier]];
     
     return _messageTableView;
 }

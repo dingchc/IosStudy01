@@ -49,8 +49,4 @@
     return _bubbleImageView;
 }
 
-+(NSString *)myTag {
-    return @"tag_message";
-}
-
 @end
