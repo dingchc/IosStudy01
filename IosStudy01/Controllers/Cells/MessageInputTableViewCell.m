@@ -38,7 +38,7 @@
         make.left.equalTo(self.senderNameLabel);
         make.top.equalTo(self.senderNameLabel.mas_bottom).offset(2.0);
         make.bottom.equalTo(self.contentView).offset(-HONRIZONTAL_MARGIN);
-        make.right.equalTo(self.contentView).offset(-(AVATAR_DIMEN));
+        make.right.lessThanOrEqualTo(self.contentView).offset(-(AVATAR_DIMEN));
     }];
 }
 

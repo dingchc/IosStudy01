@@ -111,6 +111,7 @@
 		35CFE18B20CF6273006BAD8E /* MessageInputTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 35CFE18A20CF6273006BAD8E /* MessageInputTableViewCell.m */; };
 		35CFE18E20CF6395006BAD8E /* MessageOutputTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 35CFE18D20CF6395006BAD8E /* MessageOutputTableViewCell.m */; };
 		35CFE19120CF75B5006BAD8E /* MessageImageOutputTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 35CFE19020CF75B5006BAD8E /* MessageImageOutputTableViewCell.m */; };
+		35CFE19420D0AE54006BAD8E /* UIImage+Scale.m in Sources */ = {isa = PBXBuildFile; fileRef = 35CFE19320D0AE54006BAD8E /* UIImage+Scale.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -309,6 +310,8 @@
 		35CFE18D20CF6395006BAD8E /* MessageOutputTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MessageOutputTableViewCell.m; sourceTree = "<group>"; };
 		35CFE18F20CF75B5006BAD8E /* MessageImageOutputTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MessageImageOutputTableViewCell.h; sourceTree = "<group>"; };
 		35CFE19020CF75B5006BAD8E /* MessageImageOutputTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MessageImageOutputTableViewCell.m; sourceTree = "<group>"; };
+		35CFE19220D0AE54006BAD8E /* UIImage+Scale.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIImage+Scale.h"; sourceTree = "<group>"; };
+		35CFE19320D0AE54006BAD8E /* UIImage+Scale.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIImage+Scale.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -380,6 +383,8 @@
 			children = (
 				35ACC57B1FE2551500470EAE /* UIImage+MISColor.h */,
 				35ACC57C1FE2551500470EAE /* UIImage+MISColor.m */,
+				35CFE19220D0AE54006BAD8E /* UIImage+Scale.h */,
+				35CFE19320D0AE54006BAD8E /* UIImage+Scale.m */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -824,6 +829,7 @@
 				35CFE12620BEE536006BAD8E /* UIImage+ForceDecode.m in Sources */,
 				35CFE18E20CF6395006BAD8E /* MessageOutputTableViewCell.m in Sources */,
 				350B0144200646FB00F93EAF /* ConfigViewController.m in Sources */,
+				35CFE19420D0AE54006BAD8E /* UIImage+Scale.m in Sources */,
 				35CFE11A20BEE536006BAD8E /* SDWebImageGIFCoder.m in Sources */,
 				3537C65B1FE6AC4900F377B4 /* TopicListViewController.m in Sources */,
 				35CFE12220BEE536006BAD8E /* SDWebImageFrame.m in Sources */,

@@ -11,6 +11,12 @@
 #import <Masonry/Masonry.h>
 #import "MISAppConfig.h"
 #import "UIImageView+WebCache.h"
+#import "UIImage+Scale.h"
+
+@interface MessageImageInputTableViewCell()
+
+
+@end
 
 @implementation MessageImageInputTableViewCell
 
@@ -38,12 +44,18 @@
         
         self.senderNameLabel.text = entry.senderName;
         
-//        [self.contentImageView sd_setImageWithURL:[NSURL URLWithString:entry.thumbUrl] placeholderImage:[UIImage imageNamed:@"Thumb_Placeholder"]];
-        
         [self.contentImageView sd_setImageWithURL:[NSURL URLWithString:entry.thumbUrl] placeholderImage:[UIImage imageNamed:@"Thumb_Placeholder"] completed:^(UIImage * _Nullable image, NSError * _Nullable error, SDImageCacheType cacheType, NSURL * _Nullable imageURL) {
            
             NSLog(@"image.size=%f, %f", image.size.width, image.size.height);
-    
+            
+            UIImage * scaledImage = [image scaleToSize:CGSizeMake(120, 120)];
+            self.contentImageView.image = scaledImage;
+
+            [self.contentImageView mas_remakeConstraints:^(MASConstraintMaker *make) {
+
+                make.edges.equalTo(self.bubbleImageView).insets(UIEdgeInsetsMake(6.0, 13.0f, 6.0f, 6.0));
+            }];
+        
         }];
     }
 }
@@ -57,5 +69,6 @@
     }
     return _contentImageView;
 }
+
 
 @end

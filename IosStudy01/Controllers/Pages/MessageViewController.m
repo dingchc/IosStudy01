@@ -65,18 +65,21 @@
     entry3.isInput = YES;
     [self.messageArray addObject:entry3];
     
+    // 图片
+    MessageEntry* entry5 = [MessageEntry initWithMsgId:5 withSenderId:1 withSenderName:@"毛毛" withContent:@"" withAvatar:senderAvatarUrl];
+    entry5.type = 2;
+    entry5.isInput = YES;
+    // 小图 https://ss1.bdstatic.com/70cFvXSh_Q1YnxGkpoWK1HF6hhy/it/u=4167116097,2538574550&fm=15&gp=0.jpg
+    // 中图 http://img5.imgtn.bdimg.com/it/u=415783616,2172665037&fm=27&gp=0.jpg
+    entry5.thumbUrl = @"http://img5.imgtn.bdimg.com/it/u=415783616,2172665037&fm=27&gp=0.jpg";
+    
+    [self.messageArray addObject:entry5];
     
     MessageEntry* entry4 = [MessageEntry initWithMsgId:1 withSenderId:1 withSenderName:@"丁崇慈" withContent:@"阻塞锁，可以说是让线程进入阻塞状态进行等待，当获得相应的信号（唤醒，时间） 时，才可以进入线程的准备就绪状态，准备就绪状态的所有线程，通过竞争，进入运行状态。JAVA中，能够进入退出、阻塞状态或包含阻塞锁的方法有 ，synchronized 关键字（其中的重量锁）." withAvatar:mySelfAvatarUrl];
     
     [self.messageArray addObject:entry4];
     
-    // 图片
-    MessageEntry* entry5 = [MessageEntry initWithMsgId:5 withSenderId:1 withSenderName:@"毛毛" withContent:@"" withAvatar:senderAvatarUrl];
-    entry5.type = 2;
-    entry5.isInput = YES;
-    entry5.thumbUrl = @"https://ss0.bdstatic.com/70cFvHSh_Q1YnxGkpoWK1HF6hhy/it/u=1239908697,3156627091&fm=27&gp=0.jpg";
     
-    [self.messageArray addObject:entry5];
     
 
 }
