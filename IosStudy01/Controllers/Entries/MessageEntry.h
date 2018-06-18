@@ -7,6 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <UIKit/UIKit.h>
 
 @interface MessageEntry : NSObject
 
@@ -27,6 +28,11 @@
 @property(nonatomic) NSInteger audioLength;
 @property(nonatomic, copy) NSString* thumbUrl;
 @property(nonatomic, copy) NSString* url;
+
+/**
+ * 图片大小
+ */
+@property(nonatomic, assign) CGSize imageSize;
 
 +(MessageEntry*) initWithMsgId:(NSInteger) msgId withSenderId:(NSInteger) senderId withSenderName:(NSString*) senderName withContent:(NSString*) content withAvatar:(NSString*) avatarUrl;
 @end

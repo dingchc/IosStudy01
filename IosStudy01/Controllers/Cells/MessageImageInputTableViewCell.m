@@ -38,6 +38,7 @@
 -(void)updateCellWithObj:(id)obj {
     
     if (obj) {
+        
         MessageEntry * entry = obj;
         // use sd webimage
         [self.avatarImageView sd_setImageWithURL:[NSURL URLWithString:entry.avatarUrl] placeholderImage:[UIImage imageNamed:@"Avatar_default_medium"]];
@@ -46,16 +47,21 @@
         
         [self.contentImageView sd_setImageWithURL:[NSURL URLWithString:entry.thumbUrl] placeholderImage:[UIImage imageNamed:@"Thumb_Placeholder"] completed:^(UIImage * _Nullable image, NSError * _Nullable error, SDImageCacheType cacheType, NSURL * _Nullable imageURL) {
            
-            NSLog(@"image.size=%f, %f", image.size.width, image.size.height);
+            NSLog(@"image.size=%f, %f, %@", image.size.width, image.size.height, self);
             
-            UIImage * scaledImage = [image scaleToSize:CGSizeMake(120, 120)];
+            UIImage * scaledImage = [image scaleToSize:CGSizeMake(image.size.width, image.size.height)];
             self.contentImageView.image = scaledImage;
 
             [self.contentImageView mas_remakeConstraints:^(MASConstraintMaker *make) {
 
                 make.edges.equalTo(self.bubbleImageView).insets(UIEdgeInsetsMake(6.0, 13.0f, 6.0f, 6.0));
             }];
-        
+            
+            // 设置高度，发送通知
+            if (entry.imageSize.width <= 0.01) {
+                entry.imageSize = CGSizeMake(image.size.width, image.size.height);
+                [[NSNotificationCenter defaultCenter] postNotificationName:NOTIFY_IMAGE_READY object:entry];
+            }
         }];
     }
 }

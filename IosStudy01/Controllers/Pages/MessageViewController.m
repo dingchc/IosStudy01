@@ -31,9 +31,17 @@
 
 @implementation MessageViewController
 
+-(void)dealloc {
+    
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    
+    // 通知
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(notifyImageReady:) name:NOTIFY_IMAGE_READY object:nil];
     
     CGSize screenSize = [UIScreen mainScreen].bounds.size;
     NSLog(@"screen size is width:%f, height:%f", screenSize.width, screenSize.height);
@@ -61,22 +69,22 @@
     [self.messageArray addObject:entry2];
     
     MessageEntry* entry3 = [MessageEntry initWithMsgId:3 withSenderId:2 withSenderName:@"毛毛" withContent:@"锁作为并发共享数据，保证一致性的工具，在JAVA平台有多种实现(如 synchronized 和 ReentrantLock等等 ) 。这些已经写好提供的锁为我们开发提供了便利，但是锁的具体性质以及类型却很少被提及。本系列文章将分析JAVA中常见的锁以及其特性，为大家答疑解惑。" withAvatar:senderAvatarUrl];
-    
+
     entry3.isInput = YES;
     [self.messageArray addObject:entry3];
-    
+
     // 图片
     MessageEntry* entry5 = [MessageEntry initWithMsgId:5 withSenderId:1 withSenderName:@"毛毛" withContent:@"" withAvatar:senderAvatarUrl];
     entry5.type = 2;
     entry5.isInput = YES;
     // 小图 https://ss1.bdstatic.com/70cFvXSh_Q1YnxGkpoWK1HF6hhy/it/u=4167116097,2538574550&fm=15&gp=0.jpg
     // 中图 http://img5.imgtn.bdimg.com/it/u=415783616,2172665037&fm=27&gp=0.jpg
-    entry5.thumbUrl = @"http://img5.imgtn.bdimg.com/it/u=415783616,2172665037&fm=27&gp=0.jpg";
-    
+    entry5.thumbUrl = @"https://ss3.bdstatic.com/70cFv8Sh_Q1YnxGkpoWK1HF6hhy/it/u=1401405607,179897102&fm=27&gp=0.jpg";
+
     [self.messageArray addObject:entry5];
-    
+
     MessageEntry* entry4 = [MessageEntry initWithMsgId:1 withSenderId:1 withSenderName:@"丁崇慈" withContent:@"阻塞锁，可以说是让线程进入阻塞状态进行等待，当获得相应的信号（唤醒，时间） 时，才可以进入线程的准备就绪状态，准备就绪状态的所有线程，通过竞争，进入运行状态。JAVA中，能够进入退出、阻塞状态或包含阻塞锁的方法有 ，synchronized 关键字（其中的重量锁）." withAvatar:mySelfAvatarUrl];
-    
+
     [self.messageArray addObject:entry4];
     
     
@@ -96,15 +104,7 @@
     
     MISTableViewCell* cell = nil;
     
-//    // input msg
-//    if (entry.isInput) {
-//        cell = [self.messageTableView dequeueReusableCellWithIdentifier:TAG_INPUT_TEXT];
-//    }
-//    // output msg
-//    else {
-//        cell = [self.messageTableView dequeueReusableCellWithIdentifier:TAG_OUTPUT_TEXT];
-//    }
-    
+    // input msg
     if (entry.isInput) {
         if (entry.type == 1) {
             cell = [self.messageTableView dequeueReusableCellWithIdentifier:[MessageTextInputTableViewCell reuseIdentifier]];
@@ -122,6 +122,7 @@
         }
     }
     
+//    NSLog(@"cellForRowAtIndexPath -- %ld", indexPath.row);
     [cell updateCellWithObj:entry];
     
     return cell;
@@ -144,8 +145,6 @@
         else if (entry.type == 2) {
             height = [MessageImageInputTableViewCell heightForCellWithObj:entry];
         }
-        
-        NSLog(@"1 height=%f", height);
     } else {
         
         if (entry.type == 1) {
@@ -154,13 +153,45 @@
         else if (entry.type == 2) {
             height = [MessageImageOutputTableViewCell heightForCellWithObj:entry];
         }
-        
-        NSLog(@"2 height=%f", height);
     }
     
-//    height = [MessageTableViewCell heightForCellWithObj:entry];
+    NSLog(@" height=%f", height);
     
     return height;
+}
+
+/**
+ * 收到图片加载完毕的通知
+ */
+-(void)notifyImageReady : (NSNotification*) notification {
+    
+    int row = [self findMessageIndexWithMsg:[notification object]];
+    
+    NSLog(@"receive notification %d", row);
+    
+    NSIndexPath *indexPath = [NSIndexPath indexPathForRow:row inSection:0];
+    [self.messageTableView reloadRowsAtIndexPaths:[NSArray arrayWithObjects:indexPath, nil] withRowAnimation:UITableViewRowAnimationNone];
+}
+
+/**
+ * 查找消息的索引
+ */
+-(int)findMessageIndexWithMsg:(MessageEntry *) matchMessage {
+    
+    NSArray* msgs = [[NSArray alloc]initWithArray:self.messageArray];
+    int index = -1;
+    int i = 0;
+    
+    for (MessageEntry *msg in msgs) {
+        
+        if (msg == matchMessage) {
+            index = i;
+            break;
+        }
+        i++;
+    }
+    
+    return index;
 }
 
 
