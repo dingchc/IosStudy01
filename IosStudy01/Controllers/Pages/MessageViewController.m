@@ -79,7 +79,7 @@
     entry5.isInput = YES;
     // 小图 https://ss1.bdstatic.com/70cFvXSh_Q1YnxGkpoWK1HF6hhy/it/u=4167116097,2538574550&fm=15&gp=0.jpg
     // 中图 http://img5.imgtn.bdimg.com/it/u=415783616,2172665037&fm=27&gp=0.jpg
-    entry5.thumbUrl = @"https://ss3.bdstatic.com/70cFv8Sh_Q1YnxGkpoWK1HF6hhy/it/u=1401405607,179897102&fm=27&gp=0.jpg";
+    entry5.thumbUrl = @"http://img5.imgtn.bdimg.com/it/u=415783616,2172665037&fm=27&gp=0.jpg";
 
     [self.messageArray addObject:entry5];
 
@@ -87,8 +87,12 @@
 
     [self.messageArray addObject:entry4];
     
+    // 图片
+    MessageEntry* entry6 = [MessageEntry initWithMsgId:6 withSenderId:1 withSenderName:@"丁崇慈" withContent:@"" withAvatar:mySelfAvatarUrl];
+    entry6.type = 2;
+    entry6.thumbUrl = @"https://ss3.bdstatic.com/70cFv8Sh_Q1YnxGkpoWK1HF6hhy/it/u=3641472529,2956520928&fm=27&gp=0.jpg";
     
-    
+    [self.messageArray addObject:entry6];
 
 }
 

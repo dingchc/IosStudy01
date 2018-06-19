@@ -14,6 +14,7 @@
 
 #define AVATAR_DIMEN 36.0f
 #define HONRIZONTAL_MARGIN 10.0f
+#define MAX_IMAGE_DIMEN 144
 #define NOTIFY_IMAGE_READY @"NOTIFICATION_IMAGE_LOAD"
 
 @interface MessageTableViewCell : MISTableViewCell
@@ -21,6 +22,8 @@
 @property(nonatomic, strong) UIImageView* avatarImageView;
 @property(nonatomic, strong) UILabel* senderNameLabel;
 @property(nonatomic, strong) UIImageView* bubbleImageView;
+
+-(CGSize) calculateScaledSizeWithOrigin:(CGSize) originSize;
 
 @end
 

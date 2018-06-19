@@ -37,7 +37,7 @@
 
     [self.bubbleImageView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.equalTo(self.senderNameLabel.mas_bottom).offset(2.0);
-        make.left.equalTo(@AVATAR_DIMEN);
+        make.left.greaterThanOrEqualTo(@AVATAR_DIMEN);
         make.right.equalTo(self.senderNameLabel.mas_right);
         make.bottom.equalTo(self.contentView).offset(-HONRIZONTAL_MARGIN);
     }];

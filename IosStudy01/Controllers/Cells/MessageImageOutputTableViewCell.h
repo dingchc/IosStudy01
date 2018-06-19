@@ -7,9 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "MessageTableViewCell.h"
+#import "MessageOutputTableViewCell.h"
 
-@interface MessageImageOutputTableViewCell : MessageTableViewCell
+@interface MessageImageOutputTableViewCell : MessageOutputTableViewCell
 
 @property(nonatomic, strong) UIImageView* contentImageView;
 

@@ -49,4 +49,17 @@
     return _bubbleImageView;
 }
 
+-(CGSize) calculateScaledSizeWithOrigin:(CGSize) originSize {
+    
+    float widthRate = originSize.width / MAX_IMAGE_DIMEN;
+    float heightRage = originSize.height / MAX_IMAGE_DIMEN;
+    
+    float max = MAX(widthRate, heightRage);
+    
+    float scaledWidth = originSize.width / max;
+    float scaledHeight = originSize.height / max;
+    
+    return CGSizeMake(scaledWidth, scaledHeight);
+}
+
 @end
