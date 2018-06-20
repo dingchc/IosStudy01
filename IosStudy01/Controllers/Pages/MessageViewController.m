@@ -130,8 +130,6 @@
         }
     }
     
-    NSLog(@" height=%f", height);
-    
     return height;
 }
 
@@ -211,7 +209,3 @@
  */
 
 @end
-
-#undef TAG_INPUT
-#undef TAG_OUTPUT
-#undef TAG_SECTION

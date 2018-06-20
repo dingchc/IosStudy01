@@ -13,5 +13,7 @@
 @interface MessageAudioOutputTableViewCell : MessageOutputTableViewCell
 
 @property(nonatomic, strong) UIImageView *audioImageView;
+@property(nonatomic, strong) UILabel *lengthLabel;
+@property(nonatomic, copy) NSMutableArray *imageMutableArray;
 
 @end

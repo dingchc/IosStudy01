@@ -18,6 +18,11 @@
     [super prepare];
     
     [self addSubview:self.audioImageView];
+    [self addSubview:self.lengthLabel];
+    
+    [self.bubbleImageView setUserInteractionEnabled:YES];
+    
+    [self.bubbleImageView addGestureRecognizer:[[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(onAudioTap)]];
 }
 
 -(void)placeSubViews {
@@ -30,6 +35,13 @@
         make.width.equalTo(@AUDIO_DIMEN);
         make.height.equalTo(@AUDIO_DIMEN);
     }];
+    
+    [self.lengthLabel mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.right.equalTo(self.bubbleImageView.mas_left).offset(-5);
+        make.centerY.equalTo(self.audioImageView.mas_centerY);
+        make.height.equalTo(self.audioImageView.mas_height);
+        make.width.equalTo(@30);
+    }];
 }
 
 -(void)updateCellWithObj:(id)obj {
@@ -41,15 +53,28 @@
         [self.avatarImageView sd_setImageWithURL:[NSURL URLWithString:entry.avatarUrl] placeholderImage:[UIImage imageNamed:@"Avatar_default_medium"]];
         
         self.senderNameLabel.text = entry.senderName;
-        
+        self.lengthLabel.text=[NSString stringWithFormat:@"%ld\"", entry.audioLength];
+
         [self.bubbleImageView mas_updateConstraints:^(MASConstraintMaker *make) {
-            int audioWidth = AUDIO_DIMEN + 13 + 6;
+            int audioWidth = AUDIO_DIMEN + 13 + 6 + (entry.audioLength / 60.0) * MAX_AUDIO_DIMEN;
             int audioHeight = AUDIO_DIMEN + 6 + 6;
             make.width.equalTo(@(audioWidth));
             make.height.equalTo(@(audioHeight));
         }];
         
     }
+}
+
+-(void)onAudioTap {
+    NSLog(@"onAudioTap ... ");
+    
+    if (self.audioImageView.isAnimating) {
+        [self.audioImageView stopAnimating];
+    }
+    else {
+        [self.audioImageView startAnimating];
+    }
+    
 }
 
 # pragma Getter & Setter
@@ -59,8 +84,27 @@
     if (!_audioImageView) {
         _audioImageView = [[UIImageView alloc] init];
         _audioImageView.image = [UIImage imageNamed:@"MessageVoiceOutPlayFrame03"];
+        _audioImageView.animationImages = [self.imageMutableArray copy];
+        _audioImageView.animationDuration = 0.8;
     }
     return _audioImageView;
+}
+
+-(UILabel *)lengthLabel {
+    if (!_lengthLabel) {
+        _lengthLabel = [[UILabel alloc] init];
+        _lengthLabel.textColor = [UIColor grayColor];
+        _lengthLabel.font = [UIFont systemFontOfSize:12];
+        _lengthLabel.textAlignment = NSTextAlignmentRight;
+    }
+    return _lengthLabel;
+}
+
+-(NSMutableArray *)imageMutableArray {
+    if (!_imageMutableArray) {
+        _imageMutableArray = [[NSMutableArray alloc] initWithObjects:[UIImage imageNamed:@"MessageVoiceOutPlayFrame01"], [UIImage imageNamed:@"MessageVoiceOutPlayFrame02"], [UIImage imageNamed:@"MessageVoiceOutPlayFrame03"], [UIImage imageNamed:@"MessageVoiceOutPlayFrame02"], [UIImage imageNamed:@"MessageVoiceOutPlayFrame01"], nil];
+    }
+    return _imageMutableArray;
 }
 
 - (void)awakeFromNib {

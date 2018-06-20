@@ -68,6 +68,7 @@ static DataProvider * instance;
     MessageEntry* entry7 = [MessageEntry initWithMsgId:7 withSenderId:2 withSenderName:@"毛毛" withContent:@"" withAvatar:senderAvatarUrl];
     entry7.type = 4;
     entry7.isInput = YES;
+    entry7.audioLength = 25;
     
     [messageMutebleArray addObject:entry7];
     
@@ -75,6 +76,7 @@ static DataProvider * instance;
     MessageEntry* entry8 = [MessageEntry initWithMsgId:8 withSenderId:1 withSenderName:@"丁崇慈" withContent:@"" withAvatar:mySelfAvatarUrl];
     entry8.type = 4;
     entry8.isInput = NO;
+    entry8.audioLength = 58;
     
     [messageMutebleArray addObject:entry8];
     

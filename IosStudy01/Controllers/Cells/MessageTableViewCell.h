@@ -16,6 +16,7 @@
 #define HONRIZONTAL_MARGIN 10.0f
 #define MAX_IMAGE_DIMEN 144
 #define AUDIO_DIMEN 16
+#define MAX_AUDIO_DIMEN 144
 #define NOTIFY_IMAGE_READY @"NOTIFICATION_IMAGE_LOAD"
 
 @interface MessageTableViewCell : MISTableViewCell
