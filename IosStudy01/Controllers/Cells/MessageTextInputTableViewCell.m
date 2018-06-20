@@ -24,7 +24,7 @@
     [super placeSubViews];
     
     [self.contentLabel mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.edges.equalTo(self.bubbleImageView).insets(UIEdgeInsetsMake(10.0, 15.0f, 10.0f, 10.0));
+        make.edges.equalTo(self.bubbleImageView).insets(UIEdgeInsetsMake(6.0, 13.0f, 6.0f, 6.0));
     }];
 }
 
@@ -44,11 +44,11 @@
 
 -(UILabel *)contentLabel {
     if (!_contentLabel) {
-        _contentLabel = [[UILabel alloc]initWithFrame:CGRectMake(self.senderNameLabel.frame.origin.x + 20, 46, self.frame.size.width - AVATAR_DIMEN * 2 - 20, 40)];
+        _contentLabel = [[UILabel alloc]init];
         _contentLabel.textColor = UIColor.blackColor;
         _contentLabel.font = [UIFont systemFontOfSize : 12];
         _contentLabel.numberOfLines = 0;
-		_contentLabel.preferredMaxLayoutWidth = VIEW_WIDTH - AVATAR_DIMEN * 2 - HONRIZONTAL_MARGIN * 2 - 25.0f;
+		_contentLabel.preferredMaxLayoutWidth = VIEW_WIDTH - AVATAR_DIMEN * 2 - HONRIZONTAL_MARGIN * 2 - 19.0f;
 		_contentLabel.lineBreakMode = NSLineBreakByWordWrapping;
     }
     return _contentLabel;
