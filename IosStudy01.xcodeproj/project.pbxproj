@@ -112,6 +112,9 @@
 		35CFE18E20CF6395006BAD8E /* MessageOutputTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 35CFE18D20CF6395006BAD8E /* MessageOutputTableViewCell.m */; };
 		35CFE19120CF75B5006BAD8E /* MessageImageOutputTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 35CFE19020CF75B5006BAD8E /* MessageImageOutputTableViewCell.m */; };
 		35CFE19420D0AE54006BAD8E /* UIImage+Scale.m in Sources */ = {isa = PBXBuildFile; fileRef = 35CFE19320D0AE54006BAD8E /* UIImage+Scale.m */; };
+		35CFE19720D8AE59006BAD8E /* DataProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = 35CFE19620D8AE59006BAD8E /* DataProvider.m */; };
+		35CFE19A20DA3C28006BAD8E /* MessageAudioInputTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 35CFE19920DA3C28006BAD8E /* MessageAudioInputTableViewCell.m */; };
+		35CFE19D20DA3FBE006BAD8E /* MessageAudioOutputTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 35CFE19C20DA3FBE006BAD8E /* MessageAudioOutputTableViewCell.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -312,6 +315,12 @@
 		35CFE19020CF75B5006BAD8E /* MessageImageOutputTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MessageImageOutputTableViewCell.m; sourceTree = "<group>"; };
 		35CFE19220D0AE54006BAD8E /* UIImage+Scale.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIImage+Scale.h"; sourceTree = "<group>"; };
 		35CFE19320D0AE54006BAD8E /* UIImage+Scale.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIImage+Scale.m"; sourceTree = "<group>"; };
+		35CFE19520D8AE59006BAD8E /* DataProvider.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DataProvider.h; sourceTree = "<group>"; };
+		35CFE19620D8AE59006BAD8E /* DataProvider.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DataProvider.m; sourceTree = "<group>"; };
+		35CFE19820DA3C28006BAD8E /* MessageAudioInputTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MessageAudioInputTableViewCell.h; sourceTree = "<group>"; };
+		35CFE19920DA3C28006BAD8E /* MessageAudioInputTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MessageAudioInputTableViewCell.m; sourceTree = "<group>"; };
+		35CFE19B20DA3FBE006BAD8E /* MessageAudioOutputTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MessageAudioOutputTableViewCell.h; sourceTree = "<group>"; };
+		35CFE19C20DA3FBE006BAD8E /* MessageAudioOutputTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MessageAudioOutputTableViewCell.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -351,14 +360,18 @@
 				35CFE18120C6D207006BAD8E /* MessageTextOutputTableViewCell.m */,
 				35CFE18320CF4EBD006BAD8E /* MessageImageInputTableViewCell.h */,
 				35CFE18420CF4EBD006BAD8E /* MessageImageInputTableViewCell.m */,
+				35CFE18F20CF75B5006BAD8E /* MessageImageOutputTableViewCell.h */,
+				35CFE19020CF75B5006BAD8E /* MessageImageOutputTableViewCell.m */,
 				35CFE18620CF55B6006BAD8E /* MessageTableViewCell.h */,
 				35CFE18720CF55B6006BAD8E /* MessageTableViewCell.m */,
 				35CFE18920CF6273006BAD8E /* MessageInputTableViewCell.h */,
 				35CFE18A20CF6273006BAD8E /* MessageInputTableViewCell.m */,
 				35CFE18C20CF6395006BAD8E /* MessageOutputTableViewCell.h */,
 				35CFE18D20CF6395006BAD8E /* MessageOutputTableViewCell.m */,
-				35CFE18F20CF75B5006BAD8E /* MessageImageOutputTableViewCell.h */,
-				35CFE19020CF75B5006BAD8E /* MessageImageOutputTableViewCell.m */,
+				35CFE19820DA3C28006BAD8E /* MessageAudioInputTableViewCell.h */,
+				35CFE19920DA3C28006BAD8E /* MessageAudioInputTableViewCell.m */,
+				35CFE19B20DA3FBE006BAD8E /* MessageAudioOutputTableViewCell.h */,
+				35CFE19C20DA3FBE006BAD8E /* MessageAudioOutputTableViewCell.m */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -385,6 +398,8 @@
 				35ACC57C1FE2551500470EAE /* UIImage+MISColor.m */,
 				35CFE19220D0AE54006BAD8E /* UIImage+Scale.h */,
 				35CFE19320D0AE54006BAD8E /* UIImage+Scale.m */,
+				35CFE19520D8AE59006BAD8E /* DataProvider.h */,
+				35CFE19620D8AE59006BAD8E /* DataProvider.m */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -809,6 +824,7 @@
 			files = (
 				35CFE12920BEE536006BAD8E /* UIImage+GIF.m in Sources */,
 				35CFE12120BEE536006BAD8E /* SDWebImageWebPCoder.m in Sources */,
+				35CFE19A20DA3C28006BAD8E /* MessageAudioInputTableViewCell.m in Sources */,
 				35CFE12020BEE536006BAD8E /* SDWebImageTransition.m in Sources */,
 				356C8BCB1F2CC0CB00F11435 /* Toolkit.m in Sources */,
 				35CFE11420BEE536006BAD8E /* UIButton+WebCache.m in Sources */,
@@ -832,11 +848,13 @@
 				35CFE19420D0AE54006BAD8E /* UIImage+Scale.m in Sources */,
 				35CFE11A20BEE536006BAD8E /* SDWebImageGIFCoder.m in Sources */,
 				3537C65B1FE6AC4900F377B4 /* TopicListViewController.m in Sources */,
+				35CFE19720D8AE59006BAD8E /* DataProvider.m in Sources */,
 				35CFE12220BEE536006BAD8E /* SDWebImageFrame.m in Sources */,
 				358AA39C20B42DC5001E23A0 /* FMDatabase.m in Sources */,
 				35CFE18220C6D207006BAD8E /* MessageTextOutputTableViewCell.m in Sources */,
 				35CFE11E20BEE536006BAD8E /* SDWebImageCoder.m in Sources */,
 				35CFE11B20BEE536006BAD8E /* NSImage+WebCache.m in Sources */,
+				35CFE19D20DA3FBE006BAD8E /* MessageAudioOutputTableViewCell.m in Sources */,
 				350B01472006490D00F93EAF /* ConfigTableViewCell.m in Sources */,
 				35CFE11720BEE536006BAD8E /* UIImageView+WebCache.m in Sources */,
 				35CFE18520CF4EBE006BAD8E /* MessageImageInputTableViewCell.m in Sources */,
