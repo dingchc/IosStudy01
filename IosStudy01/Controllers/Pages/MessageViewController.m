@@ -16,6 +16,7 @@
 #import "MessageEntry.h"
 #import "UIImageView+WebCache.h"
 #import "DataProvider.h"
+#import "CoreManager.h"
 
 
 @interface MessageViewController() <UITableViewDelegate, UITableViewDataSource>
@@ -43,6 +44,8 @@
     
     [self  initData];
     [self.view addSubview:self.messageTableView];
+    
+    [[CoreManager instance] downloadFileWithUrl:@"https://ss1.bdstatic.com/70cFuXSh_Q1YnxGkpoWK1HF6hhy/it/u=2249478252,3079196793&fm=27&gp=0.jpg"];
 }
 
 - (void)didReceiveMemoryWarning {

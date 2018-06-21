@@ -34,18 +34,43 @@ static CoreManager *instance = nil;
 
 - (void) afGet {
     
-//    AFHTTPSessionManager *manager = [[AFHTTPSessionManager alloc] init];
-//
-//    [manager POST:@"https://www.apiopen.top/meituApi" parameters:@{@"page":@"2"} progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
-//        NSLog(@"success %@", responseObject);
-//
-//
-//
-//    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
-//        NSLog(@"error %@", error);
-//    }];
+    AFHTTPSessionManager *manager = [[AFHTTPSessionManager alloc] init];
+
+    [manager POST:@"https://www.apiopen.top/meituApi" parameters:@{@"page":@"2"} progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+        NSLog(@"success %@", responseObject);
+        
+    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+        NSLog(@"error %@", error);
+    }];
     
-    self.name = @"111";
+}
+
+/**
+ * 下载文件
+ */
+-(void) downloadFileWithUrl:(NSString *) url {
+    
+    AFURLSessionManager *manager = [[AFURLSessionManager alloc] init];
+    NSURLRequest * request = [[NSURLRequest alloc] initWithURL:[NSURL URLWithString:url]];
+    
+    NSURLSessionDownloadTask *downloadTask = [manager downloadTaskWithRequest:request progress:^(NSProgress * _Nonnull downloadProgress) {
+        
+        NSLog(@"completed = %lld, total = %lld", downloadProgress.completedUnitCount, downloadProgress.totalUnitCount);
+        
+    } destination:^NSURL * _Nonnull(NSURL * _Nonnull targetPath, NSURLResponse * _Nonnull response) {
+        
+        NSArray *documentPaths  = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+        NSString *destinationPath = [documentPaths.firstObject stringByAppendingPathComponent:response.suggestedFilename];
+        
+        return [NSURL fileURLWithPath:destinationPath];
+        
+    } completionHandler:^(NSURLResponse * _Nonnull response, NSURL * _Nullable filePath, NSError * _Nullable error) {
+        
+        NSLog(@"filePath=%@", filePath);
+        NSLog(@"error=%@", error);
+    }];
+    
+    [downloadTask resume];
 }
 
 @end

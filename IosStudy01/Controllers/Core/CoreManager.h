@@ -8,6 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
+
 @interface CoreManager : NSObject
 
 @property(nonatomic, copy) NSString* name;
@@ -15,4 +16,10 @@
 + (CoreManager *) instance;
 
 - (void) afGet;
+
+/**
+ * 下载文件
+ */
+-(void) downloadFileWithUrl:(NSString *) url;
+
 @end
