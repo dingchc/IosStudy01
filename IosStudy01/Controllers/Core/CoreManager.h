@@ -8,6 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
+typedef void(^CompleteBlock)(NSURL *filePath);
 
 @interface CoreManager : NSObject
 
@@ -20,6 +21,6 @@
 /**
  * 下载文件
  */
--(void) downloadFileWithUrl:(NSString *) url;
+-(void) downloadFileWithUrl:(NSString *) url completeBlock:(CompleteBlock) block;
 
 @end

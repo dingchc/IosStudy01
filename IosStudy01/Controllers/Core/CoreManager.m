@@ -48,7 +48,7 @@ static CoreManager *instance = nil;
 /**
  * 下载文件
  */
--(void) downloadFileWithUrl:(NSString *) url {
+-(void) downloadFileWithUrl:(NSString *) url completeBlock:(CompleteBlock) block {
     
     AFURLSessionManager *manager = [[AFURLSessionManager alloc] init];
     NSURLRequest * request = [[NSURLRequest alloc] initWithURL:[NSURL URLWithString:url]];
@@ -68,6 +68,8 @@ static CoreManager *instance = nil;
         
         NSLog(@"filePath=%@", filePath);
         NSLog(@"error=%@", error);
+        
+        block(filePath);
     }];
     
     [downloadTask resume];
